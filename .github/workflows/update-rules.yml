@@ -1,76 +1,187 @@
 name: AdGuard Rules Auto-Update
 on:
   schedule:
-    - cron: '0 10 * * *'  # 每天北京时间10点自动运行
+    - cron: '0 10 * * *'  # 每天UTC时间10点（北京时间18点）运行
   workflow_dispatch:       # 允许手动触发
 
 permissions:
-  contents: write  # 必须的写入权限
+  contents: write
+
+env:
+  MAX_RETRY: 3
+  MIN_RULES: 200000  # 提高最低规则数阈值
 
 jobs:
-  update-rules:
+  rule-updater:
+    name: Update AdBlock Rules
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+
     steps:
-      - name: Checkout repository
+      # ========== 初始化阶段 ==========
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 获取完整提交历史
+          fetch-depth: 0
+          ref: ${{ github.head_ref || github.ref }}
 
-      - name: Download and merge rules
+      # ========== 规则下载阶段 ==========
+      - name: Download all rule sources
+        id: download
         run: |
-          # 创建临时目录
-          mkdir -p tmp
+          set -eo pipefail
+          mkdir -p ./tmp
           
-          # 国内高精度规则（添加 || exit 1 确保下载失败时终止）
-          curl -sL https://anti-ad.net/anti-ad-for-dnsmasq.conf -o tmp/anti-ad.txt || exit 1
-          curl -sL https://easylist-downloads.adblockplus.org/easylistchina.txt -o tmp/easylist-china.txt || exit 1
-          curl -sL https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt -o tmp/xinggsf.txt || exit 1
-          curl -sL https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad3.txt -o tmp/adrules.txt || exit 1
-          curl -sL https://raw.githubusercontent.com/jiekouad/main/main/list.txt -o tmp/jiekou.txt || exit 1
+          declare -A RULE_SOURCES=(
+            # 国内规则
+            ["anti-ad"]="https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
+            ["adbyby-video"]="https://raw.githubusercontent.com/adbyby/xwhyc-rules/master/video.txt"
+            ["xinggsf"]="https://gitee.com/xinggsf/Adblock-Rule/raw/master/rule.txt"
+            ["blueskyxn"]="https://raw.githubusercontent.com/BlueSkyXN/AdGuardHomeRules/master/all.txt"
+            
+            # 保留原有规则
+            ["easylist-china"]="https://easylist-downloads.adblockplus.org/easylistchina.txt"
+            ["adguard-base"]="https://filters.adtidy.org/extension/ublock/filters/2.txt"
+            ["oisd"]="https://dbl.oisd.nl/"
+            ["nocoin"]="https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt"
+          )
 
-          # 国际通用规则
-          curl -sL https://filters.adtidy.org/extension/ublock/filters/2.txt -o tmp/adguard-base.txt || exit 1
-          curl -sL https://easylist.to/easylist/easylist.txt -o tmp/easylist.txt || exit 1
-          curl -sL https://easylist.to/easylist/easyprivacy.txt -o tmp/easyprivacy.txt || exit 1
-          curl -sL https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt -o tmp/adguard-dns.txt || exit 1
-          curl -sL https://dbl.oisd.nl/ -o tmp/oisd.txt || exit 1
-          curl -sL https://www.i-dont-care-about-cookies.eu/abp/ -o tmp/cookies.txt || exit 1
+          # 并行下载所有规则
+          for name in "${!RULE_SOURCES[@]}"; do
+            (
+              echo "→ 下载 $name 规则..."
+              curl --retry $MAX_RETRY --connect-timeout 30 -sSL \
+                "${RULE_SOURCES[$name]}" -o "./tmp/${name}.txt" || {
+                  echo "::warning::下载失败: $name"
+                  exit 0  # 单个失败不影响其他
+                }
+              
+              # 验证文件有效性
+              if [[ ! -s "./tmp/${name}.txt" ]]; then
+                echo "::warning::空文件: $name"
+                rm -f "./tmp/${name}.txt"
+              fi
+            ) &
+          done
+          wait  # 等待所有下载完成
 
-          # 专项补充规则
-          curl -sL https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt -o tmp/cjx.txt || exit 1
-          curl -sL https://filters.adtidy.org/android/filters/11_optimized.txt -o tmp/mobile-ads.txt || exit 1
-          curl -sL https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt -o tmp/nocoin.txt || exit 1
-          curl -sL https://filters.adtidy.org/extension/ublock/filters/4.txt -o tmp/social.txt || exit 1
+          echo "downloaded_files=$(ls ./tmp/*.txt 2>/dev/null | wc -l)" >> $GITHUB_OUTPUT
 
-          # 社区推荐规则
-          curl -sL https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt -o tmp/halflife.txt || exit 1
+      # ========== 规则处理阶段 ==========  
+      - name: Process and merge rules
+        id: process
+        run: |
+          set -eo pipefail
+          
+          # 1. 生成标准文件头
+          cat <<-'EOF' > adguard-rules.txt
+          ! Title: Ultimate AdGuard Rules
+          ! Description: 聚合20+广告过滤规则 | 含视频/隐私/国际规则
+          ! Expires: 1 day
+          ! Version: $(date +%Y%m%d)
+          ! Homepage: https://github.com/${{ github.repository }}
+          ! License: MIT
+          ! Last modified: $(date -u '+%Y-%m-%dT%H:%M:%SZ')
+          !
+          ! 包含规则源:
+          EOF
+          
+          # 2. 添加所有规则源信息
+          for file in ./tmp/*.txt; do
+            echo "! - $(basename "${file%.*}")" >> adguard-rules.txt
+          done
+          echo "!" >> adguard-rules.txt
 
-          # 合并并处理规则
-          echo "! 广告规则合集" > adguard-rules.txt
-          echo "! 更新时间: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> adguard-rules.txt
-          echo "! 包含以下规则源:" >> adguard-rules.txt
-          for file in tmp/*.txt; do
-            echo "! - $(basename $file)" >> adguard-rules.txt
-            grep -E '^\|\||^@@\|\||^!' $file | sed -E 's/^@@\|\|/@@/; s/^\|\|//; s/\^.*//' >> combined.tmp
+          # 3. 分类合并规则
+          {
+            # 基础广告规则 (高优先级)
+            grep -hE '^\|\|.*\^|^@@\|\|' ./tmp/{anti-ad,adguard-base,easylist-china}.txt 2>/dev/null || true
+            
+            # 视频专项规则
+            grep -hE '^\|\|.*(video|tv|stream)' ./tmp/{adbyby-video,xinggsf}.txt 2>/dev/null || true
+            
+            # 隐私保护规则
+            grep -h '^\|\|' ./tmp/{nocoin,oisd,blueskyxn}.txt 2>/dev/null | grep -Ev '^!' || true
+            
+            # 白名单规则 (低优先级)
+            grep -h '^@@|' ./tmp/*.txt 2>/dev/null | sort -u || true
+          } | awk '!x[$0]++' | grep -vE '^$|^#' >> adguard-rules.txt
+
+          # 4. 高级统计
+          stats() {
+            echo "! 总拦截规则: $(grep -c '^\|\|' adguard-rules.txt)"
+            echo "! 视频规则: $(grep -c 'video' adguard-rules.txt)"
+            echo "! 白名单: $(grep -c '^@@' adguard-rules.txt)"
+            echo "! 最后检查: $(date +'%Y-%m-%d %H:%M:%S')"
+          }
+          stats >> adguard-rules.txt
+
+      # ========== 验证阶段 ==========
+      - name: Validate rules
+        id: validate
+        run: |
+          # 1. 基础检查
+          if [[ ! -s adguard-rules.txt ]]; then
+            echo "::error::生成文件为空!"
+            exit 1
+          fi
+
+          # 2. 规则数量验证
+          total_rules=$(grep -c '^\|\|' adguard-rules.txt)
+          if (( total_rules < MIN_RULES )); then
+            echo "::error::规则数不足! 当前: $total_rules (最低要求: $MIN_RULES)"
+            exit 1
+          fi
+
+          # 3. 关键规则检查
+          declare -A REQUIRED_PATTERNS=(
+            ["视频规则"]="video|tv|stream"
+            ["跟踪保护"]="analytics|track"
+            ["社交媒体"]="facebook|twitter|weibo"
+          )
+          
+          for desc in "${!REQUIRED_PATTERNS[@]}"; do
+            count=$(grep -cE "${REQUIRED_PATTERNS[$desc]}" adguard-rules.txt)
+            if (( count < 100 )); then
+              echo "::warning::${desc}数量可能不足: $count"
+            fi
           done
 
-          # 去重排序
-          sort -u combined.tmp -o sorted.tmp
-          echo "! 总规则数: $(wc -l < sorted.tmp)" >> adguard-rules.txt
-          cat sorted.tmp >> adguard-rules.txt
+          echo "total_rules=$total_rules" >> $GITHUB_OUTPUT
 
-          # 清理临时文件
-          rm -rf tmp combined.tmp sorted.tmp
-
-      - name: Commit and push changes
+      # ========== 提交阶段 ==========
+      - name: Commit changes
+        if: steps.validate.outcome == 'success'
         run: |
-          # 设置Git身份
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@users.noreply.github.com"
+          git config --global user.name "AdGuard Updater"
+          git config --global user.email "updater@noreply.github.com"
           
-          # 添加并提交更改（使用 --allow-empty 防止无更新时失败）
           git add adguard-rules.txt
-          git commit -m "Auto-update rules: $(date +'%Y-%m-%d %H:%M')" --allow-empty
-          
-          # 推送更改（使用 GITHUB_TOKEN 认证）
-          git push
+          if git diff --cached --quiet; then
+            echo "::notice::无新变更"
+          else
+            git commit -m "Update: $(date +'%m-%d') [$(jq -rn '${{ steps.validate.outputs.total_rules }} / 1000 | floor')k rules]"
+            git push
+            echo "::notice::已提交版本: $(date +%Y%m%d)"
+          fi
+
+      # ========== 清理与报告 ==========
+      - name: Cleanup
+        if: always()
+        run: rm -rf ./tmp
+
+      - name: Generate report
+        if: always()
+        run: |
+          echo "### 🛡️ AdGuard 规则更新报告" >> $GITHUB_STEP_SUMMARY
+          echo "| 指标 | 值 |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|----|" >> $GITHUB_STEP_SUMMARY
+          echo "| 下载源 | ${{ steps.download.outputs.downloaded_files }} 个 |" >> $GITHUB_STEP_SUMMARY
+          echo "| 总规则数 | ${{ steps.validate.outputs.total_rules }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 视频规则 | $(grep -c 'video' adguard-rules.txt) |" >> $GITHUB_STEP_SUMMARY
+          echo "| 更新时间 | $(date -u '+%Y-%m-%d %H:%M:%S UTC') |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**包含规则源:**" >> $GITHUB_STEP_SUMMARY
+          for file in ./tmp/*.txt 2>/dev/null; do
+            echo "- $(basename "${file%.*}")" >> $GITHUB_STEP_SUMMARY
+          done
