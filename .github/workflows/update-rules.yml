@@ -1,51 +1,66 @@
-name: AdGuard Rules Auto Sync
-
+name: AdGuard Rules Auto-Update
 on:
   schedule:
-    - cron: '0 2 * * *'  # 每天北京时间10点运行
-  workflow_dispatch:
+    - cron: '0 10 * * *'  # 每天北京时间10点自动运行
+  workflow_dispatch:       # 允许手动触发
 
 jobs:
-  update:
+  update-rules:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Merge All Rules
-      run: |
-        # 定义规则源列表（含AdGuard官方规则）
-        SOURCES=(
-          "https://filters.adtidy.org/extension/ublock/filters/2.txt"  # AdGuard Base
-          "https://filters.adtidy.org/extension/ublock/filters/3.txt"  # AdGuard Tracking
-          "https://filters.adtidy.org/extension/ublock/filters/4.txt"  # AdGuard Social
-          "https://filters.adtidy.org/extension/ublock/filters/11.txt" # AdGuard Mobile
-          "https://anti-ad.net/anti-ad-for-dnsmasq.conf"
-          "https://easylist-downloads.adblockplus.org/easylistchina.txt"
-          "https://easylist.to/easylist/easyprivacy.txt"
-          "https://dbl.oisd.nl/"
-          "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
-        )
+      - name: Download and merge rules
+        run: |
+          # 创建临时目录
+          mkdir -p tmp
+          
+          # 国内高精度规则
+          curl -sL https://anti-ad.net/anti-ad-for-dnsmasq.conf -o tmp/anti-ad.txt
+          curl -sL https://easylist-downloads.adblockplus.org/easylistchina.txt -o tmp/easylist-china.txt
+          curl -sL https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt -o tmp/xinggsf.txt
+          curl -sL https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad3.txt -o tmp/adrules.txt
+          curl -sL https://raw.githubusercontent.com/jiekouad/main/main/list.txt -o tmp/jiekou.txt
 
-        # 下载并预处理规则
-        for url in "${SOURCES[@]}"; do
-          echo "! 规则源: $url" >> temp.txt
-          curl -sL "$url" | \
-          grep -Ev "^\!|^$|^#|^/" | \  # 移除注释和空行
-          sed -E 's/^\|\|([^\^]+)\^.*/\1/' | \  # 提取域名
-          awk '!seen[$0]++' >> temp.txt  # 去重
-          echo "" >> temp.txt
-        done
+          # 国际通用规则
+          curl -sL https://filters.adtidy.org/extension/ublock/filters/2.txt -o tmp/adguard-base.txt
+          curl -sL https://easylist.to/easylist/easylist.txt -o tmp/easylist.txt
+          curl -sL https://easylist.to/easylist/easyprivacy.txt -o tmp/easyprivacy.txt
+          curl -sL https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt -o tmp/adguard-dns.txt
+          curl -sL https://dbl.oisd.nl/ -o tmp/oisd.txt
+          curl -sL https://www.i-dont-care-about-cookies.eu/abp/ -o tmp/cookies.txt
 
-        # 生成最终文件
-        echo -e "! AdGuard 全网规则整合版\n! 更新时间: $(date +'%Y-%m-%d %H:%M:%S %Z')\n! 总条目: $(grep -v '^!' temp.txt | wc -l)" > adguard-all-rules.txt
-        cat temp.txt >> adguard-all-rules.txt
-        rm temp.txt
+          # 专项补充规则
+          curl -sL https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt -o tmp/cjx.txt
+          curl -sL https://filters.adtidy.org/android/filters/11_optimized.txt -o tmp/mobile-ads.txt
+          curl -sL https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt -o tmp/nocoin.txt
+          curl -sL https://filters.adtidy.org/extension/ublock/filters/4.txt -o tmp/social.txt
 
-    - name: Commit Changes
-      run: |
-        git config --global user.name "AdGuard Updater Bot"
-        git config --global user.email "bot@adguard.example"
-        git add adguard-all-rules.txt
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update: $(date +'%Y-%m-%d %H:%M')" && git push)
+          # 社区推荐规则
+          curl -sL https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt -o tmp/halflife.txt
+
+          # 合并并处理规则
+          echo "! 广告规则合集" > adguard-rules.txt
+          echo "! 更新时间: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> adguard-rules.txt
+          echo "! 包含以下规则源:" >> adguard-rules.txt
+          for file in tmp/*.txt; do
+            echo "! - $(basename $file)" >> adguard-rules.txt
+            grep -E '^\|\||^@@\|\||^!' $file | sed -E 's/^@@\|\|/@@/; s/^\|\|//; s/\^.*//' >> combined.tmp
+          done
+
+          # 去重排序
+          sort -u combined.tmp -o sorted.tmp
+          echo "! 总规则数: $(wc -l < sorted.tmp)" >> adguard-rules.txt
+          cat sorted.tmp >> adguard-rules.txt
+
+          # 清理临时文件
+          rm -rf tmp combined.tmp sorted.tmp
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "AdGuard Updater Bot"
+          git config --global user.email "adguard-bot@users.noreply.github.com"
+          git add adguard-rules.txt
+          git commit -m "Auto-update rules: $(date +'%Y-%m-%d %H:%M')"
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
