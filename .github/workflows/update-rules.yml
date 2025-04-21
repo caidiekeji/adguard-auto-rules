@@ -4,6 +4,9 @@ on:
     - cron: '0 10 * * *'  # 每天北京时间10点自动运行
   workflow_dispatch:       # 允许手动触发
 
+permissions:
+  contents: write  # 必须的写入权限
+
 jobs:
   update-rules:
     runs-on: ubuntu-latest
@@ -11,15 +14,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # 获取完整提交历史
 
       - name: Download and merge rules
-        id: download
         run: |
           # 创建临时目录
           mkdir -p tmp
           
-          # 国内高精度规则
+          # 国内高精度规则（添加 || exit 1 确保下载失败时终止）
           curl -sL https://anti-ad.net/anti-ad-for-dnsmasq.conf -o tmp/anti-ad.txt || exit 1
           curl -sL https://easylist-downloads.adblockplus.org/easylistchina.txt -o tmp/easylist-china.txt || exit 1
           curl -sL https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt -o tmp/xinggsf.txt || exit 1
@@ -60,32 +62,15 @@ jobs:
           # 清理临时文件
           rm -rf tmp combined.tmp sorted.tmp
 
-      - name: Commit changes
-        id: commit
+      - name: Commit and push changes
         run: |
-          git config --global user.name "AdGuard Updater Bot"
-          git config --global user.email "adguard-bot@users.noreply.github.com"
+          # 设置Git身份
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@users.noreply.github.com"
+          
+          # 添加并提交更改（使用 --allow-empty 防止无更新时失败）
           git add adguard-rules.txt
-          git commit -m "Auto-update rules: $(date +'%Y-%m-%d %H:%M')" || exit 0
-          git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
-          echo "commit_hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-
-      - name: Send success email
-        if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp-mail.outlook.com
-          server_port: 587
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "AdGuard 规则更新成功 - $(date +'%Y-%m-%d')"
-          to: caidiekeji@hotmail.com
-          from: ${{ secrets.EMAIL_USERNAME }}
-          body: |
-            AdGuard 规则已成功更新！
-            
-            更新时间: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
-            最新提交: ${{ steps.commit.outputs.commit_hash }}
-            规则数量: $(grep -c '^[^!]' adguard-rules.txt)
-            
-            查看更新: https://github.com/${{ github.repository }}/commit/${{ steps.commit.outputs.commit_hash }}
+          git commit -m "Auto-update rules: $(date +'%Y-%m-%d %H:%M')" --allow-empty
+          
+          # 推送更改（使用 GITHUB_TOKEN 认证）
+          git push
