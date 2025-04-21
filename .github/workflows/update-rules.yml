@@ -10,35 +10,38 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Download 和 merge rules
+      - name: Download and merge rules
+        id: download
         run: |
           # 创建临时目录
           mkdir -p tmp
           
           # 国内高精度规则
-          curl -sL https://anti-ad.net/anti-ad-for-dnsmasq.conf -o tmp/anti-ad.txt
-          curl -sL https://easylist-downloads.adblockplus.org/easylistchina.txt -o tmp/easylist-china.txt
-          curl -sL https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt -o tmp/xinggsf.txt
-          curl -sL https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad3.txt -o tmp/adrules.txt
-          curl -sL https://raw.githubusercontent.com/jiekouad/main/main/list.txt -o tmp/jiekou.txt
+          curl -sL https://anti-ad.net/anti-ad-for-dnsmasq.conf -o tmp/anti-ad.txt || exit 1
+          curl -sL https://easylist-downloads.adblockplus.org/easylistchina.txt -o tmp/easylist-china.txt || exit 1
+          curl -sL https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/ABP-FX.txt -o tmp/xinggsf.txt || exit 1
+          curl -sL https://cdn.jsdelivr.net/gh/o0HalfLife0o/list@master/ad3.txt -o tmp/adrules.txt || exit 1
+          curl -sL https://raw.githubusercontent.com/jiekouad/main/main/list.txt -o tmp/jiekou.txt || exit 1
 
           # 国际通用规则
-          curl -sL https://filters.adtidy.org/extension/ublock/filters/2.txt -o tmp/adguard-base.txt
-          curl -sL https://easylist.to/easylist/easylist.txt -o tmp/easylist.txt
-          curl -sL https://easylist.to/easylist/easyprivacy.txt -o tmp/easyprivacy.txt
-          curl -sL https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt -o tmp/adguard-dns.txt
-          curl -sL https://dbl.oisd.nl/ -o tmp/oisd.txt
-          curl -sL https://www.i-dont-care-about-cookies.eu/abp/ -o tmp/cookies.txt
+          curl -sL https://filters.adtidy.org/extension/ublock/filters/2.txt -o tmp/adguard-base.txt || exit 1
+          curl -sL https://easylist.to/easylist/easylist.txt -o tmp/easylist.txt || exit 1
+          curl -sL https://easylist.to/easylist/easyprivacy.txt -o tmp/easyprivacy.txt || exit 1
+          curl -sL https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt -o tmp/adguard-dns.txt || exit 1
+          curl -sL https://dbl.oisd.nl/ -o tmp/oisd.txt || exit 1
+          curl -sL https://www.i-dont-care-about-cookies.eu/abp/ -o tmp/cookies.txt || exit 1
 
           # 专项补充规则
-          curl -sL https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt -o tmp/cjx.txt
-          curl -sL https://filters.adtidy.org/android/filters/11_optimized.txt -o tmp/mobile-ads.txt
-          curl -sL https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt -o tmp/nocoin.txt
-          curl -sL https://filters.adtidy.org/extension/ublock/filters/4.txt -o tmp/social.txt
+          curl -sL https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt -o tmp/cjx.txt || exit 1
+          curl -sL https://filters.adtidy.org/android/filters/11_optimized.txt -o tmp/mobile-ads.txt || exit 1
+          curl -sL https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt -o tmp/nocoin.txt || exit 1
+          curl -sL https://filters.adtidy.org/extension/ublock/filters/4.txt -o tmp/social.txt || exit 1
 
           # 社区推荐规则
-          curl -sL https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt -o tmp/halflife.txt
+          curl -sL https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt -o tmp/halflife.txt || exit 1
 
           # 合并并处理规则
           echo "! 广告规则合集" > adguard-rules.txt
@@ -57,10 +60,32 @@ jobs:
           # 清理临时文件
           rm -rf tmp combined.tmp sorted.tmp
 
-      - name: 提交更改
+      - name: Commit changes
+        id: commit
         run: |
           git config --global user.name "AdGuard Updater Bot"
           git config --global user.email "adguard-bot@users.noreply.github.com"
           git add adguard-rules.txt
-          git commit -m "Auto-update rules: $(date +'%Y-%m-%d %H:%M')"
-          git push https://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@github.com/${{ github.repository }}.git
+          git commit -m "Auto-update rules: $(date +'%Y-%m-%d %H:%M')" || exit 0
+          git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          echo "commit_hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Send success email
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp-mail.outlook.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "AdGuard 规则更新成功 - $(date +'%Y-%m-%d')"
+          to: caidiekeji@hotmail.com
+          from: ${{ secrets.EMAIL_USERNAME }}
+          body: |
+            AdGuard 规则已成功更新！
+            
+            更新时间: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+            最新提交: ${{ steps.commit.outputs.commit_hash }}
+            规则数量: $(grep -c '^[^!]' adguard-rules.txt)
+            
+            查看更新: https://github.com/${{ github.repository }}/commit/${{ steps.commit.outputs.commit_hash }}
