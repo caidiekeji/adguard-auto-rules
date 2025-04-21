@@ -1,0 +1,1 @@
+# adguard-auto-rules
