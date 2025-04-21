@@ -1,0 +1,51 @@
+name: AdGuard Rules Auto Sync
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 每天北京时间10点运行
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Merge All Rules
+      run: |
+        # 定义规则源列表（含AdGuard官方规则）
+        SOURCES=(
+          "https://filters.adtidy.org/extension/ublock/filters/2.txt"  # AdGuard Base
+          "https://filters.adtidy.org/extension/ublock/filters/3.txt"  # AdGuard Tracking
+          "https://filters.adtidy.org/extension/ublock/filters/4.txt"  # AdGuard Social
+          "https://filters.adtidy.org/extension/ublock/filters/11.txt" # AdGuard Mobile
+          "https://anti-ad.net/anti-ad-for-dnsmasq.conf"
+          "https://easylist-downloads.adblockplus.org/easylistchina.txt"
+          "https://easylist.to/easylist/easyprivacy.txt"
+          "https://dbl.oisd.nl/"
+          "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
+        )
+
+        # 下载并预处理规则
+        for url in "${SOURCES[@]}"; do
+          echo "! 规则源: $url" >> temp.txt
+          curl -sL "$url" | \
+          grep -Ev "^\!|^$|^#|^/" | \  # 移除注释和空行
+          sed -E 's/^\|\|([^\^]+)\^.*/\1/' | \  # 提取域名
+          awk '!seen[$0]++' >> temp.txt  # 去重
+          echo "" >> temp.txt
+        done
+
+        # 生成最终文件
+        echo -e "! AdGuard 全网规则整合版\n! 更新时间: $(date +'%Y-%m-%d %H:%M:%S %Z')\n! 总条目: $(grep -v '^!' temp.txt | wc -l)" > adguard-all-rules.txt
+        cat temp.txt >> adguard-all-rules.txt
+        rm temp.txt
+
+    - name: Commit Changes
+      run: |
+        git config --global user.name "AdGuard Updater Bot"
+        git config --global user.email "bot@adguard.example"
+        git add adguard-all-rules.txt
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update: $(date +'%Y-%m-%d %H:%M')" && git push)
