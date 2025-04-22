@@ -4,7 +4,9 @@ from urllib.parse import urlparse
 class AdDetector:
     def __init__(self):
         # 从文件加载已知广告域名
-        with open('ad_detector/known_ad_domains.txt', 'r') as f:
+        import os
+        file_path = os.path.join(os.path.dirname(__file__), 'known_ad_domains.txt')
+        with open(file_path, 'r') as f:
             self.known_ad_domains = [line.strip() for line in f if line.strip()]
         
         self.ad_keywords = [
