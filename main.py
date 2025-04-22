@@ -26,6 +26,11 @@ def run_spiders():
     logging.info(f"Current working directory: {os.getcwd()}")
     logging.info(f"Config path: {os.path.join(project_root, 'config', 'target_sites.json')}")
     
+    # 检查配置文件是否存在
+    if not os.path.exists(os.path.join(project_root, 'config', 'target_sites.json')):
+        logging.error("Config file not found!")
+        return []
+    
     # 添加必要的路径到sys.path
     sys.path.insert(0, project_root)
     scrapy_project_path = os.path.join(project_root, 'scrapy_project')
@@ -76,11 +81,15 @@ def generate_rules(urls):
     return sorted(rules)
 
 def save_rules(rules):
-    if not os.path.exists('rules'):
-        os.makedirs('rules')
+    rules_dir = 'rules'
+    if not os.path.exists(rules_dir):
+        os.makedirs(rules_dir)
+    
+    output_file = os.path.join(rules_dir, 'adguard.txt')
+    logging.info(f"Saving rules to: {output_file}")
     
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open('rules/adguard.txt', 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8') as f:
         f.write(f"! Title: Comprehensive TV/Streaming AdBlock Rules\n")
         f.write(f"! Description: Blocks ads on TV brands, content providers and streaming platforms\n")
         f.write(f"! Version: 1.0\n")
