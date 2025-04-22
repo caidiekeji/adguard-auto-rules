@@ -14,17 +14,22 @@ def setup_logging():
     )
 
 def run_spiders():
-    # 将项目根目录添加到Python路径
+    # 获取项目根目录并设置路径
     project_root = os.path.dirname(os.path.abspath(__file__))
-    sys.path.insert(0, project_root)
+    os.chdir(project_root)  # 确保工作目录正确
     
     # 设置环境变量
-    os.environ.setdefault('SCRAPY_SETTINGS_MODULE', 'scrapy_project.scrapy_project.settings')
+    os.environ['SCRAPY_SETTINGS_MODULE'] = 'scrapy_project.scrapy_project.settings'
     
-    # 确保scrapy_project目录在路径中
+    # 调试日志
+    logging.info(f"Project root: {project_root}")
+    logging.info(f"Current working directory: {os.getcwd()}")
+    logging.info(f"Config path: {os.path.join(project_root, 'config', 'target_sites.json')}")
+    
+    # 添加必要的路径到sys.path
+    sys.path.insert(0, project_root)
     scrapy_project_path = os.path.join(project_root, 'scrapy_project')
-    if scrapy_project_path not in sys.path:
-        sys.path.insert(0, scrapy_project_path)
+    sys.path.insert(0, scrapy_project_path)
     
     process = CrawlerProcess(get_project_settings())
     
@@ -33,6 +38,7 @@ def run_spiders():
         'content_providers',
         'streaming_platforms'
     ]
+    logging.info(f"Starting spiders: {spiders}")
     
     for spider in spiders:
         logging.info(f"Starting spider: {spider}")
