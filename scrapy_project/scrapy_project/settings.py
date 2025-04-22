@@ -19,8 +19,25 @@ FEED_FORMAT = 'json'
 FEED_URI = '%(name)s.json'
 FEED_EXPORT_ENCODING = 'utf-8'
 
-# 启用日志输出到控制台
+# 更详细的日志设置
 LOG_ENABLED = True
 LOG_LEVEL = 'DEBUG'
+LOG_FORMAT = '%(asctime)s [%(name)s] %(levelname)s: %(message)s'
 
-USER_AGENT = 'Mozilla/5.0 (compatible; TVAdBlockBot/1.0; +https://github.com/yourusername/TV-AdBlock-Rules)'
+# 下载设置
+DOWNLOAD_TIMEOUT = 30
+DOWNLOAD_DELAY = 2
+AUTOTHROTTLE_ENABLED = True
+AUTOTHROTTLE_START_DELAY = 5
+RETRY_ENABLED = True
+RETRY_TIMES = 3
+RETRY_HTTP_CODES = [500, 502, 503, 504, 408, 429]
+
+# 浏览器模拟
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
+}
+
+# 确保安装scrapy-user-agents包
