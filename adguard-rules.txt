@@ -1,5 +1,5 @@
 ! 广告规则合集
-! 更新时间: 2025-10-14 10:13:45 UTC
+! 更新时间: 2025-10-15 10:14:31 UTC
 ! 包含以下规则源:
 ! - adguard-base.txt
 ! - adguard-dns.txt
@@ -17,7 +17,7 @@
 ! - oisd.txt
 ! - social.txt
 ! - xinggsf.txt
-! 总规则数: 204859
+! 总规则数: 205105
 !
 !
 ! 
@@ -526,6 +526,7 @@
 ! Bad: ||tracker.legitwebsite.com
 ! Baidu
 ! Banana ads
+! Bandizip
 ! Be careful when blocking snssdk.com. It is used also for legal purposes
 ! Be careful, if a site uses third-party resources (players etc.) and the rule applied in AdGuard for Safari/iOS
 ! BeMob ad tracking
@@ -611,11 +612,11 @@
 ! Central
 ! Chaturbate
 ! Checksum: 8BZGCtexC3gdaGkfO/i08Q
-! Checksum: S16xGfpsJYnwNI7urRnsFw
-! Checksum: YaF8Ua5OSqPPPXQvaeAmKw
+! Checksum: BFJt4uOq9VMTmK67M6lLaQ
+! Checksum: BboW6TofjC+IsABS9J7ySA
+! Checksum: BqFWzCA03x9+ZMu5ea2zVQ
+! Checksum: KNR2Pgdn2sjahW+ASS3Oyw
 ! Checksum: YdXre7uXW8pUjSQcMXK0vw
-! Checksum: uZ+4I1YIQIlC5c8ifIMLfg
-! Checksum: vxwob1PhHJNeuarbtHutOQ
 ! Chinese
 ! Chinese google (https://github.com/easylist/easylist/issues/15643)
 ! Chinese supplement for the EasyList filters
@@ -633,7 +634,8 @@
 ! Clickunders in the players on porn sites
 ! Clones like movies123.video, primewire.pics
 ! Commanders Act : tagcommander.com disguised trackers
-! Commit: a97ad1ca7169a00facc03193d29a088d8bef6389
+! Commit: 18773944791b3580dffcccbf26f4b8d63a92b1f5
+! Commit: a6cf8d05187aaa80ee0e95369e249f050e96eea5
 ! Common anti-adblock rules for:
 ! Common names
 ! Common rules for 'static.ads-twitter.com/uwt.js' bait
@@ -760,9 +762,9 @@
 ! Detect HTTPS filtering
 ! Detect ad blocking
 ! Detect of using AdGuard products
-! Diff-Path: ../patches/11_optimized/11_optimized-s-1760422429-3600.patch
-! Diff-Path: ../patches/2/2-s-1760433129-3600.patch
-! Diff-Path: ../patches/4/4-s-1760433130-3600.patch
+! Diff-Path: ../patches/11_optimized/11_optimized-s-1760515984-3600.patch
+! Diff-Path: ../patches/2/2-s-1760519508-3600.patch
+! Diff-Path: ../patches/4/4-s-1760516012-3600.patch
 ! Disabled
 ! Disabled due to https://github.com/AdguardTeam/AdguardFilters/issues/137980#issuecomment-1372856216
 ! Disabled for AdGuard for Safari/iOS due to the limit on the number of rules
@@ -1133,9 +1135,10 @@
 ! Last Modified: 2025年01月30日 20:00
 ! Last modified: 05 March 2025
 ! Last modified: 07 Oct 2025 11:12 UTC+7
-! Last modified: 14 Oct 2025 09:53 UTC
-! Last modified: 14 Oct 2025 10:01 UTC
-! Last modified: 2025-10-14T10:07:04.519Z
+! Last modified: 15 Oct 2025 09:49 UTC
+! Last modified: 15 Oct 2025 10:02 UTC
+! Last modified: 15 Oct 2025 10:07 UTC
+! Last modified: 2025-10-15T10:07:22.932Z
 ! Last modified: 2025/10/08 15:00 +0800
 ! Last modified: 29 Sep 2025 10:33 UTC+7
 ! Last modified: 30 Nov 2023 11:33 UTC
@@ -1745,9 +1748,9 @@
 ! Tiktok
 ! Tiktok app
 ! Tiktok videos
-! TimeUpdated: 2025-10-14T06:10:19+00:00
-! TimeUpdated: 2025-10-14T09:07:53+00:00
-! TimeUpdated: 2025-10-14T09:08:04+00:00
+! TimeUpdated: 2025-10-15T08:09:31+00:00
+! TimeUpdated: 2025-10-15T08:09:42+00:00
+! TimeUpdated: 2025-10-15T09:07:54+00:00
 ! Title: AdFilters
 ! Title: AdGuard Base filter + EasyList
 ! Title: AdGuard DNS filter
@@ -1808,14 +1811,15 @@
 ! VIPRow streaming
 ! VOE
 ! VPN Affiliate Banners
-! Version: 2.0.64.97
-! Version: 2.1.20.48
-! Version: 2.4.17.78
+! Version: 2.0.64.98
+! Version: 2.1.20.53
+! Version: 2.4.18.2
 ! Version: 202501301400
 ! Version: 202501302000
 ! Version: 202510081500
-! Version: 202510140953
-! Version: 202510141001
+! Version: 202510150949
+! Version: 202510151002
+! Version: 202510151007
 ! Version: 227
 ! Version: 2509291033
 ! Version: 2510071112
@@ -18014,6 +18018,7 @@
 4496664.notify6.com
 4497e71924.com
 4498a6bb1e.com
+44a9364fea.com
 44b6d66394.a2e5b82fea.com
 44cb3d66c1.34c72d94d3.com
 44fc0648ef.6cde8b5544.com
@@ -18906,6 +18911,7 @@
 6820tp1.com
 68287zubo85737.com
 682a5845.b-cdn.net
+685ba1f62e.com
 6888.site
 689ee63ccc.439f4b8c75.com
 68a8b43f0d.ca06ef821c.com
@@ -22655,7 +22661,7 @@
 @@googletagmanager.com/gtag/js?id=$domain=decrypt.day
 @@googletagmanager.com/gtag/js?id=$domain=linkneverdie.net
 @@googletagmanager.com/gtm.js
-@@googletagmanager.com/gtm.js$domain=3djuegosguias.com|3djuegospc.com|9to5mac.com|acehardware.com|acornonline.com|ads.spotify.com|aena.es|aeromexico.com|afisha.timepad.ru|airhaifa.com|aliexpress.com|almamedia.fi|ampparit.com|animeanime.jp|anond.hatelabo.jp|app.joinhandshake.com|applesfera.com|aruba.it|arvopaperi.fi|atgtickets.com|atptour.com|aussiebum.com|auth.max.com|autobild.de|autorevue.cz|avis.com|axeptio.eu|backcountry.com|baywa-re.com|bbcgoodfood.com|benesse-style-care.co.jp|besplatka.ua|beterbed.nl|betten.de|binglee.com.au|bombas.com|book.impress.co.jp|bsa-whitelabel.com|bunte.de|butcherblockco.com|bybit.com|bybitglobal.com|caminteresse.fr|campograndenews.com.br|canadiantire.ca|capital.it|carcareplus.jp|carhartt-wip.com|casa.it|ccleaner.com|cdek.ru|cdon.fi|checkout.ao.com|chipotle.com|chronopost.fr|cinemacafe.net|cityheaven.net|clickup.com|cmoa.jp|como.fi|complex.com|compradiccion.com|computerbild.de|coolermaster.com|cora.fr|cosmo-hairshop.de|costco.co.jp|costco.co.uk|courses.monoprix.fr|cram.com|crello.com|currys.co.uk|cyclestyle.net|cyclingnews.com|cypress.io|dazeddigital.com|de.hgtv.com|deejay.it|dengekionline.com|dholic.co.jp|digitalocean.com|directoalpaladar.com|directv.com|dlsite.com|dmax.de|dmv.ca.gov|doodle.com|dropps.com|e15.cz|easternbank.com|eat.co.nz|ecmweb.com|ecovacs.com|edwardjones.com|eki-net.com|elcorteingles.es|elnuevodia.com|enmotive.com|episodi.fi|eprice.it|ergotron.com|espinof.com|euronics.ee|euronics.it|expressvpn.com|famesupport.com|fandom.com|feex.co.il|festoolusa.com|finanzen.at|finanzen.ch|finanzen.net|findernet.com|flets.com|flytap.com|focus.de|formula1.com|fortress.com.hk|fortune.com|freenet-funk.de|froxy.com|fum.fi|gamebusiness.jp|gamespark.jp|genbeta.com|glamusha.ru|globo.com|gorillamind.com|grandhood.dk|gravitydefyer.com|gumtree.com|harveynorman.co.nz|harveynorman.com.au|hatenacorp.jp|headlightrevolution.com|hepsiburada.com|herculesstands.com|hobbyhall.fi|hobbystock.jp|homeinspector.org|hostingvergelijker.nl|hotelfountaingate.com.au|idealo.at|idealo.de|iexprofs.nl|iltalehti.fi|independent.co.uk|inferno.fi|inside-games.jp|insiderstore.com.br|iodonna.it|iphoneitalia.com|j-wave.co.jp|jalan.net|jn.pt|join.kazm.com|journaldunet.com|jreastmall.com|junonline.jp|kakuyomu.jp|karriere.at|karriere.heldele.de|kauppalehti.fi|kedronparkhotel.com.au|kfc.co.jp|kinepolis.be|kinepolis.ch|kinepolis.es|kinepolis.fr|kinepolis.lu|kinepolis.nl|kitamura.jp|komputronik.pl|konami.com|kontan.co.id|la7.it|ladepeche.fr|larousse.fr|lastampa.it|lasvegasentuidioma.com|lbc.co.uk|lecker.de|lequipeur.com|level.travel|life.fi|lift.co.za|linternaute.com|lippu.fi|loopearplugs.com|luko.eu|m1.com|m2o.it|magazineluiza.com.br|mainichi.jp|makitani.net|mall.heiwa.jp|mangaseek.net|marks.com|mcgeeandco.com|mecindo.no|mediamarkt.nl|mediuutiset.fi|mercell.com|meritonsuites.com.au|midilibre.fr|mikrobitti.fi|mirapodo.de|mobilmania.cz|montcopa.org|morimotohid.com|mustar.meitetsu.co.jp|mycar-life.com|mysmartprice.com|nanikanokami.github.io|nap-camp.com|net-chuko.com|netcombo.com.br|newscafe.ne.jp|nexon.com|nflgamepass.com|ngv.vic.gov.au|nielsendodgechryslerjeepram.com|nihontsushin.com|noelleeming.co.nz|nordvpn.com|nourison.com|nove.tv|o2.co.uk|oakandfort.com|odia.ig.com.br|oetker-shop.de|okwave.jp|olx.ro|onepodcast.it|online-shop.mb.softbank.jp|online.ysroad.co.jp|onlineshop.ocn.ne.jp|order.fiveguys.com|orpi.com|papajohns.com|pccomponentes.com|petsathome.com|pgatoursuperstore.com|philips.com|pioneer.eu|plaion.com|plantsome.ca|plex.tv|pohjanmaanhyvinvointi.fi|poprosa.com|porsche.com|portofoonwinkel.nl|post.ch|posti.fi|pptvhd36.com|primeoak.co.uk|prisjakt.nu|prisonfellowship.org|prizehometickets.com.au|proxyscrape.com|qrcode-monkey.com|radiko.jp|radiobob.de|radiorur.de|rbbtoday.com|reanimal.jp|remax.com.ar|resemom.jp|response.jp|rhbgroup.com|rocketnews24.com|rtl.de|rumba.fi|rustih.ru|rydercup.com|sanwacompany.co.jp|saraiva.com.br|saturn.at|savethechildren.it|scan.netsecurity.ne.jp|sciencesetavenir.fr|scotsman.com|service.smt.docomo.ne.jp|servicing.loandepot.com|shop.clifbar.com|shoprite.com|sloways.eu|smartbox.com|soranews24.com|soundguys.com|soundi.fi|spektrum.de|sport1.de|sportingnews.com|sportiva.shueisha.co.jp|sportmaster.ru|spyder7.com|stage.parco.jp|store-jp.nintendo.com|str.toyokeizai.net|stressless.com|stuttgarter-nachrichten.de|subscribe.greenbuildingadvisor.com|sunnybankhotel.com.au|superesportes.com.br|support.bose.com|support.brother.com|support.creative.com|support.knivesandtools.com|swarajyamag.com|swb.de|talent.lowes.com|talouselama.fi|tbsradio.jp|teddyfood.com|tekniikkatalous.fi|telia.no|thecw.com|theretrofitsource.com|thesandshotel.com.au|ticketmaster.com|tickets.georgiaaquarium.org|tide.com|tilt.fi|time.com|tivi.fi|tn.com.ar|tomshw.it|topper.com.br|toyota-forklifts.se|trademe.co.nz|tradera.com|transa.ch|tredz.co.uk|trendencias.com|trendenciashombre.com|trendyol-milla.com|trendyol.com|trespa.info|tribuna.com|truckspring.com|tugatech.com.pt|tumi.com|tv-asahi.co.jp|type.jp|uclabruins.com|unieuro.it|uniqlo.com|upc.pl|upwork.com|uqr.to|uusisuomi.fi|veho.fi|vidaextra.com|video.lacnews24.it|video.repubblica.it|vip.de|virginmedia.com|vitonica.com|viviennewestwood-tokyo.com|vox.de|vtvgo.vn|wamiz.com|watson.ch|watsons.com.tr|workingclassheroes.co.uk|wowma.jp|wpb.shueisha.co.jp|www.gov.pl|xatakamovil.com|xxl.se|ybt.sapporobeer.jp|ymobile.jp|yotsuba-shop.com|youpouch.com|zakzak.co.jp|zazzle.com|zennioptical.com|zf1.tohoku-epco.co.jp|zinio.com|zipair.net|zive.cz|zozo.jp
+@@googletagmanager.com/gtm.js$domain=3djuegosguias.com|3djuegospc.com|9to5mac.com|acehardware.com|acornonline.com|ads.spotify.com|aena.es|aeromexico.com|afisha.timepad.ru|airhaifa.com|aliexpress.com|almamedia.fi|ampparit.com|animeanime.jp|anond.hatelabo.jp|app.joinhandshake.com|applesfera.com|aruba.it|arvopaperi.fi|atgtickets.com|atptour.com|aussiebum.com|auth.max.com|autobild.de|autorevue.cz|avis.com|axeptio.eu|backcountry.com|baywa-re.com|bbcgoodfood.com|benesse-style-care.co.jp|besplatka.ua|beterbed.nl|betten.de|binglee.com.au|bombas.com|book.impress.co.jp|bsa-whitelabel.com|bunte.de|butcherblockco.com|bybit.com|bybitglobal.com|caminteresse.fr|campograndenews.com.br|canadiantire.ca|capital.it|carcareplus.jp|carhartt-wip.com|casa.it|ccleaner.com|cdek.ru|cdon.fi|checkout.ao.com|chipotle.com|chronopost.fr|cinemacafe.net|cityheaven.net|clickup.com|cmoa.jp|como.fi|complex.com|compradiccion.com|computerbild.de|coolermaster.com|cora.fr|cosmo-hairshop.de|costco.co.jp|costco.co.uk|courses.monoprix.fr|cram.com|crello.com|currys.co.uk|cyclestyle.net|cyclingnews.com|cypress.io|dazeddigital.com|de.hgtv.com|deejay.it|dengekionline.com|dholic.co.jp|digitalocean.com|directoalpaladar.com|directv.com|dlsite.com|dmax.de|dmv.ca.gov|doodle.com|dropps.com|e15.cz|easternbank.com|eat.co.nz|ecmweb.com|ecovacs.com|edwardjones.com|eki-net.com|elcorteingles.es|elnuevodia.com|enmotive.com|episodi.fi|eprice.it|ergotron.com|espinof.com|euronics.ee|euronics.it|expressvpn.com|famesupport.com|fandom.com|feex.co.il|festoolusa.com|finanzen.at|finanzen.ch|finanzen.net|findernet.com|flets.com|flytap.com|focus.de|formula1.com|fortress.com.hk|fortune.com|freenet-funk.de|froxy.com|fum.fi|gamebusiness.jp|gamespark.jp|genbeta.com|glamusha.ru|globo.com|gorillamind.com|grandhood.dk|gravitydefyer.com|gumtree.com|harveynorman.co.nz|harveynorman.com.au|hatenacorp.jp|headlightrevolution.com|hepsiburada.com|herculesstands.com|hobbyhall.fi|hobbystock.jp|homeinspector.org|hostingvergelijker.nl|hotelfountaingate.com.au|idealo.at|idealo.de|iexprofs.nl|iltalehti.fi|independent.co.uk|inferno.fi|inside-games.jp|insiderstore.com.br|iodonna.it|iphoneitalia.com|j-wave.co.jp|jalan.net|jbhifi.co.nz|jbhifi.com.au|jn.pt|join.kazm.com|journaldunet.com|jreastmall.com|junonline.jp|kakuyomu.jp|karriere.at|karriere.heldele.de|kauppalehti.fi|kedronparkhotel.com.au|kfc.co.jp|kinepolis.be|kinepolis.ch|kinepolis.es|kinepolis.fr|kinepolis.lu|kinepolis.nl|kitamura.jp|komputronik.pl|konami.com|kontan.co.id|la7.it|ladepeche.fr|larousse.fr|lastampa.it|lasvegasentuidioma.com|lbc.co.uk|lecker.de|lequipeur.com|level.travel|life.fi|lift.co.za|linternaute.com|lippu.fi|loopearplugs.com|luko.eu|m1.com|m2o.it|magazineluiza.com.br|mainichi.jp|makitani.net|mall.heiwa.jp|mangaseek.net|marks.com|mcgeeandco.com|mecindo.no|mediamarkt.nl|mediuutiset.fi|mercell.com|meritonsuites.com.au|midilibre.fr|mikrobitti.fi|mirapodo.de|mobilmania.cz|montcopa.org|morimotohid.com|mustar.meitetsu.co.jp|mycar-life.com|mysmartprice.com|nanikanokami.github.io|nap-camp.com|net-chuko.com|netcombo.com.br|newscafe.ne.jp|nexon.com|nflgamepass.com|ngv.vic.gov.au|nielsendodgechryslerjeepram.com|nihontsushin.com|noelleeming.co.nz|nordvpn.com|nourison.com|nove.tv|o2.co.uk|oakandfort.com|odia.ig.com.br|oetker-shop.de|okwave.jp|olx.ro|onepodcast.it|online-shop.mb.softbank.jp|online.ysroad.co.jp|onlineshop.ocn.ne.jp|order.fiveguys.com|orpi.com|papajohns.com|pccomponentes.com|petsathome.com|pgatoursuperstore.com|philips.com|pioneer.eu|plaion.com|plantsome.ca|plex.tv|pohjanmaanhyvinvointi.fi|poprosa.com|porsche.com|portofoonwinkel.nl|post.ch|posti.fi|pptvhd36.com|primeoak.co.uk|prisjakt.nu|prisonfellowship.org|prizehometickets.com.au|proxyscrape.com|qrcode-monkey.com|radiko.jp|radiobob.de|radiorur.de|rbbtoday.com|reanimal.jp|remax.com.ar|resemom.jp|response.jp|rhbgroup.com|rocketnews24.com|rtl.de|rumba.fi|rustih.ru|rydercup.com|sanwacompany.co.jp|saraiva.com.br|saturn.at|savethechildren.it|scan.netsecurity.ne.jp|sciencesetavenir.fr|scotsman.com|service.smt.docomo.ne.jp|servicing.loandepot.com|shop.clifbar.com|shoprite.com|sloways.eu|smartbox.com|soranews24.com|soundguys.com|soundi.fi|spektrum.de|sport1.de|sportingnews.com|sportiva.shueisha.co.jp|sportmaster.ru|spyder7.com|stage.parco.jp|store-jp.nintendo.com|str.toyokeizai.net|stressless.com|stuttgarter-nachrichten.de|subscribe.greenbuildingadvisor.com|sunnybankhotel.com.au|superesportes.com.br|support.bose.com|support.brother.com|support.creative.com|support.knivesandtools.com|swarajyamag.com|swb.de|talent.lowes.com|talouselama.fi|tbsradio.jp|teddyfood.com|tekniikkatalous.fi|telia.no|thecw.com|theretrofitsource.com|thesandshotel.com.au|ticketmaster.com|tickets.georgiaaquarium.org|tide.com|tilt.fi|time.com|tivi.fi|tn.com.ar|tomshw.it|topper.com.br|toyota-forklifts.se|trademe.co.nz|tradera.com|transa.ch|tredz.co.uk|trendencias.com|trendenciashombre.com|trendyol-milla.com|trendyol.com|trespa.info|tribuna.com|truckspring.com|tugatech.com.pt|tumi.com|tv-asahi.co.jp|type.jp|uclabruins.com|unieuro.it|uniqlo.com|upc.pl|upwork.com|uqr.to|uusisuomi.fi|veho.fi|vidaextra.com|video.lacnews24.it|video.repubblica.it|vip.de|virginmedia.com|vitonica.com|viviennewestwood-tokyo.com|vox.de|vtvgo.vn|wamiz.com|watson.ch|watsons.com.tr|workingclassheroes.co.uk|wowma.jp|wpb.shueisha.co.jp|www.gov.pl|xatakamovil.com|xxl.se|ybt.sapporobeer.jp|ymobile.jp|yotsuba-shop.com|youpouch.com|zakzak.co.jp|zazzle.com|zennioptical.com|zf1.tohoku-epco.co.jp|zinio.com|zipair.net|zive.cz|zozo.jp
 @@googletagmanager.com/gtm.js$domain=3djuegosguias.com|3djuegospc.com|9to5mac.com|acehardware.com|acornonline.com|ads.spotify.com|aena.es|aeromexico.com|afisha.timepad.ru|aliexpress.com|almamedia.fi|ampparit.com|animeanime.jp|anond.hatelabo.jp|app.joinhandshake.com|applesfera.com|aruba.it|arvopaperi.fi|atgtickets.com|atptour.com|aussiebum.com|auth.max.com|autobild.de|autorevue.cz|avis.com|axeptio.eu|backcountry.com|baywa-re.com|bbcgoodfood.com|benesse-style-care.co.jp|besplatka.ua|beterbed.nl|betten.de|binglee.com.au|bombas.com|book.impress.co.jp|bsa-whitelabel.com|bunte.de|butcherblockco.com|bybit.com|bybitglobal.com|caminteresse.fr|canadiantire.ca|capital.it|carcareplus.jp|carhartt-wip.com|casa.it|ccleaner.com|cdek.ru|cdon.fi|checkout.ao.com|chipotle.com|chronopost.fr|cinemacafe.net|cityheaven.net|clickup.com|cmoa.jp|como.fi|complex.com|compradiccion.com|computerbild.de|coolermaster.com|cora.fr|costco.co.jp|courses.monoprix.fr|cram.com|crello.com|cyclestyle.net|cyclingnews.com|cypress.io|dazeddigital.com|de.hgtv.com|deejay.it|dengekionline.com|dholic.co.jp|digitalocean.com|directoalpaladar.com|directv.com|dlsite.com|dmax.de|dmv.ca.gov|doodle.com|dropps.com|e15.cz|easternbank.com|ecovacs.com|edwardjones.com|eki-net.com|elcorteingles.es|elnuevodia.com|enmotive.com|episodi.fi|eprice.it|ergotron.com|espinof.com|euronics.ee|euronics.it|expressvpn.com|famesupport.com|fandom.com|feex.co.il|festoolusa.com|finanzen.at|finanzen.ch|finanzen.net|flets.com|flytap.com|focus.de|formula1.com|fortress.com.hk|fortune.com|freenet-funk.de|froxy.com|fum.fi|gamebusiness.jp|gamespark.jp|genbeta.com|glamusha.ru|globo.com|gorillamind.com|grandhood.dk|gravitydefyer.com|gumtree.com|harveynorman.co.nz|harveynorman.com.au|hatenacorp.jp|headlightrevolution.com|hepsiburada.com|herculesstands.com|hobbyhall.fi|hobbystock.jp|hostingvergelijker.nl|hotelfountaingate.com.au|idealo.at|idealo.de|iexprofs.nl|iltalehti.fi|independent.co.uk|inferno.fi|inside-games.jp|insiderstore.com.br|iodonna.it|iphoneitalia.com|j-wave.co.jp|jalan.net|jn.pt|join.kazm.com|journaldunet.com|jreastmall.com|junonline.jp|kakuyomu.jp|karriere.at|karriere.heldele.de|kauppalehti.fi|kedronparkhotel.com.au|kfc.co.jp|kinepolis.be|kinepolis.ch|kinepolis.es|kinepolis.fr|kinepolis.lu|kinepolis.nl|komputronik.pl|konami.com|la7.it|larousse.fr|lastampa.it|lasvegasentuidioma.com|lbc.co.uk|lecker.de|level.travel|life.fi|lift.co.za|linternaute.com|lippu.fi|loopearplugs.com|luko.eu|m1.com|m2o.it|magazineluiza.com.br|mainichi.jp|makitani.net|mall.heiwa.jp|mangaseek.net|mcgeeandco.com|mecindo.no|mediamarkt.nl|mediuutiset.fi|mercell.com|meritonsuites.com.au|midilibre.fr|mikrobitti.fi|mirapodo.de|mobilmania.cz|montcopa.org|morimotohid.com|mustar.meitetsu.co.jp|mycar-life.com|mysmartprice.com|nanikanokami.github.io|nap-camp.com|netcombo.com.br|newscafe.ne.jp|nflgamepass.com|ngv.vic.gov.au|nielsendodgechryslerjeepram.com|nihontsushin.com|noelleeming.co.nz|nordvpn.com|nourison.com|nove.tv|o2.co.uk|oakandfort.com|odia.ig.com.br|oetker-shop.de|okwave.jp|olx.ro|onepodcast.it|online-shop.mb.softbank.jp|online.ysroad.co.jp|onlineshop.ocn.ne.jp|order.fiveguys.com|papajohns.com|pccomponentes.com|petsathome.com|pgatoursuperstore.com|pioneer.eu|plaion.com|plantsome.ca|plex.tv|pohjanmaanhyvinvointi.fi|poprosa.com|porsche.com|portofoonwinkel.nl|post.ch|posti.fi|primeoak.co.uk|prisjakt.nu|prisonfellowship.org|prizehometickets.com.au|qrcode-monkey.com|radiko.jp|radio-canada.ca|radiobob.de|radiorur.de|rbbtoday.com|reanimal.jp|resemom.jp|response.jp|rocketnews24.com|rtl.de|rumba.fi|rustih.ru|rydercup.com|sanwacompany.co.jp|saraiva.com.br|saturn.at|savethechildren.it|scan.netsecurity.ne.jp|sciencesetavenir.fr|scotsman.com|service.smt.docomo.ne.jp|servicing.loandepot.com|shop.clifbar.com|shoprite.com|smartbox.com|soranews24.com|soundguys.com|soundi.fi|spektrum.de|sport1.de|sportingnews.com|sportiva.shueisha.co.jp|sportmaster.ru|spyder7.com|stage.parco.jp|store-jp.nintendo.com|str.toyokeizai.net|stressless.com|subscribe.greenbuildingadvisor.com|sunnybankhotel.com.au|superesportes.com.br|support.bose.com|support.brother.com|support.creative.com|support.knivesandtools.com|swarajyamag.com|swb.de|talent.lowes.com|talouselama.fi|tbsradio.jp|teddyfood.com|tekniikkatalous.fi|telia.no|thecw.com|theretrofitsource.com|ticketmaster.com|tickets.georgiaaquarium.org|tide.com|tilt.fi|tivi.fi|tn.com.ar|tomshw.it|topper.com.br|toyota-forklifts.se|trademe.co.nz|tradera.com|tredz.co.uk|trendencias.com|trendenciashombre.com|trendyol-milla.com|trendyol.com|tribuna.com|truckspring.com|tugatech.com.pt|tumi.com|tv-asahi.co.jp|type.jp|uclabruins.com|unieuro.it|uniqlo.com|upc.pl|upwork.com|uqr.to|uusisuomi.fi|veho.fi|vidaextra.com|video.lacnews24.it|video.repubblica.it|vip.de|virginmedia.com|vitonica.com|viviennewestwood-tokyo.com|vox.de|vtvgo.vn|wamiz.com|watson.ch|watsons.com.tr|workingclassheroes.co.uk|wowma.jp|wpb.shueisha.co.jp|www.gov.pl|xatakamovil.com|xxl.se|ymobile.jp|yotsuba-shop.com|youpouch.com|zakzak.co.jp|zazzle.com|zennioptical.com|zf1.tohoku-epco.co.jp|zinio.com|zive.cz|zozo.jp
 @@googletagmanager.com/gtm.js$domain=allfaucet.xyz
 @@googletagmanager.com/gtm.js$domain=asus.com.cn|mamibuy.com.tw|warnermusic.com.tw
@@ -36192,6 +36198,7 @@ aggravatingoil.com
 aggravationbabysitterplumbing.com
 aggregatedcompetitivefrock.com
 aggregateknowledge.com
+aggregationdestructoppression.com
 aggregationmodest.com
 agguriceless.com
 agharedan.click
@@ -36384,6 +36391,7 @@ ahlife.com/api.php?mod=adv&
 ahluipoxtr.ddp.fr
 ahm.135320.com
 ahmaqn.akiii.co.kr
+ahmedidrought.qpon
 ahmedtatami.cyou
 ahmestatic.fuckandcdn.com/ah-me/ahmestatic/mobile/ads/
 ahmip.mysteamate.com
@@ -37184,6 +37192,7 @@ alfelixstownrus.org
 alfemminile.com/logpix.php
 alfeza.vueling.com
 alffq.sagefinds.com
+alfinentreat.shop
 alfirkhoi.help
 alfredatitres.com
 alfredvariablecavalry.com
@@ -40159,6 +40168,7 @@ anyporn.com/player/player.php|
 anyporn.com/player/related_videos.php
 anyporn.com/xml
 anyrelationsandin.com
+anysad.pro
 anysex.com
 anysex.com/*.html
 anysex.com/*/js|
@@ -40242,6 +40252,7 @@ aoji.cn/static/js/pushadv.js
 aoji.cn/static/js/yiliao/ad_common.js
 aojlgmylzzoyq.top
 aokgbiekzlqne.website
+aokqftjypnrrg.website
 aokxcojgnjjkv.online
 aokxjkrmw.net
 aol.com/ping?
@@ -40367,6 +40378,7 @@ aphagiastarve.qpon
 apharponloun.com
 aphciaosmxnd.com
 aphealxgt.net
+apheekoudoastuh.com
 aphex.me
 aphgug.jdsports.com.sg
 aphid.nihilnegativum.com
@@ -43211,6 +43223,7 @@ artoomanyrelati.com
 artsai.com
 artshelf.xyz
 arttrk.com/pixel/
+artwareamnesia.click
 artwareshambu.com
 aruba.it/servlet/counterserver?
 arubahello.com
@@ -43486,6 +43499,7 @@ askfuelads.com
 askjbvjnejcbzweh.com
 asklentprabhu.life
 asklfnmoqwe.xyz
+asklrrpryvarf.website
 askmebefore.biz
 askprivate.com
 asktiava.com/promotion/
@@ -44281,6 +44295,7 @@ aumbiyruwf.com
 aumsookr.com
 aumsoukroa.com
 aumteftavol.com
+aumumseethekis.com
 aunehofyojgfq.space
 aungitchee.net
 aungudie.com
@@ -44500,6 +44515,7 @@ availablerest.com
 availableshove.com
 avaithaupte.net
 avaivouftiy.net
+avajwlwqbkqvm.top
 avajwlwqbkraj.top
 avalancheofnews.com
 avalanchetremorunfilled.com
@@ -45066,6 +45082,7 @@ ayokosyyagpf.xyz
 ayoovmhwq.xyz
 ayoukpts.guru
 ayozfzgbybvyn.space
+aypgkxgnetnxd.site
 ayujucfsngjvl.space
 ayv.ayvens.com
 ayxz.com/images/$script
@@ -45901,6 +45918,7 @@ bandetrochil.life
 bandhorindwelt.cfd
 bandicoot.mohit.dev
 bandicoot.sigerr.org
+bandisoft.com/bandizip/ad/
 bandoraclink.com
 bandsaislevow.com
 bandswell.com
@@ -47710,6 +47728,7 @@ bicnhetimm.com
 bicolorvaccine.shop
 bicornlekythi.life
 bicp-analytics.postscript.io
+bicyclolures.click
 bid-algorix.com
 bid.glass
 bid.mbidtg.com
@@ -47979,6 +47998,7 @@ binhchonthisinhgionghatvietnhi2022vtv6vn.weebly.com
 binhconhocsinh2021.weebly.com
 binlayer.com
 binlayer.de
+binllknltjlke.net
 binnitearchie.digital
 binoads.ir
 binocule21c.merriam-webster.com
@@ -48307,6 +48327,7 @@ bkill.com/css/js/abcbl.js
 bkill.com/css/js/xinbkill.js
 bkiterv.top
 bkjcspqtrlafh.online
+bkjgqyasbalgk.website
 bkjhqkohal.com
 bkjia.com/bkjia/js/art_rightad
 bkjia.com/bkjia/js/artitle.js
@@ -48326,6 +48347,7 @@ bkpoef.jules.com
 bkprglyptic.shop
 bkprmw.ironyporno.com
 bkqa.cn
+bkqfabzewbygc.site
 bkqklqvgoggwv.top
 bkqus.nakednutrition.com
 bkqykixrzrgwr.space
@@ -49164,6 +49186,7 @@ bonafides.club
 bonbomorpion.qpon
 bonbonme.com/js/g1313166/
 bondagevalley.cc/upload/photos/kcs.webp
+bonderscopsole.shop
 bondfondif.com
 bondleapedoasis.com
 bondtide.com
@@ -49379,6 +49402,7 @@ bossybeach.pro
 bossyhearing.com
 bossyinternal.pro
 bossyorganization.pro
+bossywake.pro
 bossyyiddish.digital
 bostad24.se
 bostadslistan.se
@@ -50512,6 +50536,7 @@ bugleczmoidgxo.com
 buglucmoob.com
 bugpizza.com
 bugs2022.com
+bugscrawled.com
 bugsfighter.com/wp-content/uploads/2020/07/malwarebytes-banner.jpg
 bugsfighter.com/wp-content/uploads/2020/07/malwarebytes-banner.jpg
 bugsnag.com
@@ -50869,6 +50894,7 @@ bvbam.heathstreetapparel.com
 bvbqyq.odalys-vacances.com
 bvbypswhds.com
 bvcgmcvln.com
+bvckutpqnrftz.website
 bvcnmtv.top
 bvdenx.xyz
 bvek.cn
@@ -50891,6 +50917,7 @@ bvr.ast.snva.jp
 bvr.snva.jp
 bvrwsn.dkwadrat.pl
 bvrzwnq.xyz
+bvtmvalgidefh.store
 bvtpk.com
 bvtznvqieofte.website
 bvubasnf.com
@@ -50916,6 +50943,7 @@ bwcdn.xyz
 bwcnmtv.top
 bwcrsvafzujog.site
 bwcvzbjbrbolk.site
+bwdsnvwtnvuhl.store
 bweriov.top
 bweulbvgrixs.com
 bwgtptgihi.com
@@ -51397,6 +51425,7 @@ c5f18bbf67.4afe4f94c5.com
 c5fdf44fce.4fee6d013f.com
 c6.friok.com
 c6.paypal.com
+c6073077cc.com
 c607b31b1a.com
 c615.denverpost.com
 c66ab37744.86d0868ed3.com
@@ -51742,6 +51771,7 @@ camisado.actonservice.com
 camisreed.com
 camiwhothoot.net
 camizekory.rest
+camletsdowage.shop
 camliveshow.xyz
 cammodels.com/api/metrics
 cammpaign.com
@@ -54231,6 +54261,7 @@ cfpgsnkdmtugz.space
 cfpwood.actonservice.com
 cfqjudyalvedj.website
 cfqkop.jaked.com
+cfqoqyiaeohvjvd.com
 cfqrooirsgecg.space
 cfqzcuasbvwva.website
 cfrnyp.kars4kids.org
@@ -54724,6 +54755,7 @@ chikpazrmdyuh.website
 chiksokraum.net
 chilatheey.net
 childbirthabolishment.com
+childbirthsteepiris.com
 childesgauche.cfd
 childeskeelman.cfd
 childhoodstudioconversation.com
@@ -55276,6 +55308,7 @@ cjn.cn
 cjnbqe.glamira.com.mx
 cjoaootrbhfcx.site
 cjodg.regalitos.com
+cjohftnninpfu.online
 cjphjf4zm.com
 cjqrjj.dekorbizden.com
 cjqyupjmmrahr.com
@@ -56742,6 +56775,7 @@ cnpc.infzm.com
 cnpingpang.com/banner/
 cnpingpang.com/themes/v1.0/images/temp/ad/
 cnpingpang.com/uploadfile/TTW.gif
+cnpkrphlfyjjao.com
 cnplugins.com/templets/cnplugins/pushbox1.js
 cnpmo.devotionnutrition.com
 cnpnplkvqgh.com
@@ -58500,6 +58534,7 @@ conveyedorchidframes.com
 conveyor.lewcoinc.com
 convictedpavementexisting.com
 convictionfoolishbathroom.com
+convictiontrialpromptly.com
 convision.davivienda.com
 convrse.media
 convsweeps.com
@@ -58772,6 +58807,7 @@ corrodedriveroverfed.com
 corrupt-comfort.com
 corrupt-peak.com
 corruptbarelytent.com
+corruptionburlylawsuit.com
 corruptobstacle.com
 corseswarty.qpon
 cortellisconnections.thomsonreuters.com
@@ -59062,6 +59098,7 @@ cowcuo.xyz
 cowhmc.docmorris.de
 cowkmallow.cyou
 cowm199.com
+cowpencinclis.com
 cowtransfer.com/api/generic/backgrounds
 cowzdrowiu.pl/images/abbot-banner.jpg
 coxbjncgqlqzu.online
@@ -59731,6 +59768,7 @@ crocopop.com
 crocotube.com/pop/
 crodfnyk.xyz
 croea.com
+croiikcrom.cfd
 crojikskrubis.com
 crolerl.com
 crom.spiegelshop.nl
@@ -59793,6 +59831,7 @@ crprt.livejasmin.com
 crptentry.com
 crptgate.com
 crqjtfoolnelm.site
+crqlsymqvub.com
 crqwhsxcvngdp.icu
 crrepo.com
 crrepo.com/ban
@@ -60724,6 +60763,7 @@ cwqctcmhswrth.online
 cwqhagwjoppbb.website
 cwqljsecvr.com
 cwrsyyzfooqyh.online
+cwrwhaivdyy.com
 cws-hulu.conviva.com
 cws.conviva.com
 cwsbrxarjnaav.space
@@ -60914,6 +60954,7 @@ czarmishap.com
 czasdzieci.pl/js/a-d-manager.js
 czasdzieci.pl/js/a-d-sync.js
 czcqb.skinvirtue.com.au
+czdclraxaacmq.online
 czdxto.radiopopular.pt
 czech-craft.eu/static/uploads/abanners/
 czechcash.com
@@ -62762,6 +62803,7 @@ dammeesquire.cyou
 dammywealth.com
 damnifycurry.life
 damnsnunship.help
+damoselbuzz.shop
 damozelgloam.cfd
 dampdock.com
 dampedvisored.com
@@ -67856,6 +67898,7 @@ denswordyogurt.com
 dental-drawer.pro
 dentalbenifitsnearme.com
 denthaitingshospic.com
+dentileazurite.com
 dentilnitter.com
 dentiststockunsoiled.com
 denutility.com
@@ -68385,6 +68428,7 @@ dhaka.elitemart.com.bd
 dhaka.sahariarshopbd.com
 dhannaq.com
 dharnaslaked.top
+dharupal.com
 dhbbfvljzjouy.website
 dhbfsbanlrmqm.website
 dhbuznztkqdqx.site
@@ -68681,6 +68725,7 @@ dietj.cardboardcutoutstandees.com
 diettrappeddestruction.com
 differentia.ru
 differlookingmanor.com
+differsfunk.com
 difficultfog.com
 difficultmatecomrade.com
 difficultyanthonymode.com
@@ -69363,6 +69408,7 @@ diverhaul.com
 dividedintegrationtransparent.com
 dividedkidblur.com
 dividedscientific.com
+divingsubmissionvocational.com
 divinitygasp.com
 divisiondrearilyunfiled.com
 divolution.com
@@ -69444,6 +69490,7 @@ djwf0dl2q9i99.cloudfront.net
 djxejkswghqlq.site
 djxjti.oil-stores.gr
 djxpnuo.xyz
+djxtphppxkzkx.website
 djxyhp.ashtondrake.com
 djz9es32qen64.cloudfront.net
 dk-go.experian.com
@@ -69872,6 +69919,7 @@ dnf06i4y06g13.cloudfront.net
 dnfnpff.xyz
 dnfs24.com
 dngens.angelico.it
+dngfhejzawbga.online
 dngpzy.bfmtv.com
 dngpzy.lexpress.fr
 dngpzy.liberation.fr
@@ -70729,6 +70777,7 @@ dreamteamaffiliates.com
 dreamteuros.digital
 dreamycanyon.com
 dreamytabs.com
+dreary-day.pro
 dreary-fuel.com
 dreary-hunt.com
 drearyaltheas.qpon
@@ -71189,6 +71238,7 @@ du1.bbdj.com
 du2uh7rq0r0d3.cloudfront.net
 du4rq1xqh3i1k.cloudfront.net
 du99h8anpnevg.cloudfront.net
+dualistesseda.com
 dualmarket.info
 dualstack-cgicol.amap.com
 dualstack-logs.amap.com
@@ -71422,6 +71472,7 @@ dvw22rk.c2dat.shop
 dvwedvktkcsvw.vip
 dvwowtnmyluv4.cloudfront.net
 dvxasfriw.com
+dvxeqsgyabyvr.online
 dvxrxm-cxo.top
 dvymkekwkkgdi.space
 dvypar.com
@@ -71445,6 +71496,7 @@ dwd11wtouhmea.cloudfront.net
 dwebwj8qthne8.cloudfront.net
 dwelledbanksia.click
 dwelllestcatch.com
+dwellreferee.shop
 dwene4pgj0r33.cloudfront.net
 dwersljlpyaw.com
 dwetwdstom1020.com
@@ -72595,6 +72647,7 @@ eclvgswxvthwx.space
 ecm.agravis.de
 ecma.bdimg.com
 ecmb.bdimg.com
+ecmsfknkqb.com
 ecn-analytics-nssl.emc.com
 ecn-analytics.emc.com
 ecn-ldr.de
@@ -72666,6 +72719,7 @@ ecvnsycct.xyz
 ecxjncetxiila.space
 ecywolaajvjpm.tech
 ecyyrthlmidze.space
+eczemabebusy.cyou
 eczmkgrzdluhe.store
 ed-sys.net
 ed.emp-online.ch
@@ -72973,6 +73027,7 @@ eebju.shopfreespirited.com
 eec.crunchyroll.com
 eecd.xyz
 eecfrq.edreams.de
+eecheckouchaumt.com
 eechicha.com
 eeco-net.actonservice.com
 eeco.xyz
@@ -74860,6 +74915,7 @@ enlyom.neonail.pl
 enmcyp.flagshop.jp
 enmusubimail000.com
 ennedranorway.top
+enneobmbavxlw.store
 ennhtjzkuhjjw.online
 ennlb.hatanosen.com
 ennoblemillime.shop
@@ -76943,6 +76999,7 @@ exxtended-access.com
 exxwhi.jmty.jp
 ey43.com
 eyaganyfyivhw.online
+eyaqbaamydgqkiv.com
 eyauknalyticafra.info
 eybrgoggcjkyl.website
 eyc-marketing.eyc.com
@@ -77005,6 +77062,7 @@ eyusky.net/weixin-img/zhifubao.jpg
 eyuwkbw.top
 eyuyao.com/yyad/
 eyvzzkpenzjhhq.com
+eywkdpzpyggcq.site
 eywtnqttlqiti.com
 eywvko.shaddy.jp
 eywvycyscto.com
@@ -77586,6 +77644,7 @@ faraway-pool.pro
 faraway-tale.pro
 farawayinstallation.com
 farceabn.cyou
+farcyhulkily.cyou
 fardasub.xyz
 fardelsbilin.world
 fardflacon.shop
@@ -78220,6 +78279,7 @@ feptbh.xyz
 fepvrd.bathandbodyworks.com.sa
 fepxltyfbllhni.com
 feqbqn.rent.com
+feqgpykeuppfi.space
 fer2oxheou4nd.com
 feraciumus.com
 ferank.fr
@@ -79583,6 +79643,7 @@ floweryflavor.com
 floweryoperation.com
 flowing.fkplus.com
 flowingassuage.com
+flowkquick.cfd
 flownetexpress.com
 flowpanlive.com
 flowplayer.com/releases/ads/
@@ -79767,6 +79828,7 @@ fnoamj.onsetfitness.com.br
 fnobmuvwhvmna.store
 fnoqgg.roninwear.com
 fnoxmhkwrkhxv.space
+fnpbvqcho.com
 fnpftjzykrbbg.store
 fnqhgazwgznjq.site
 fnrienddoc.com
@@ -80423,6 +80485,7 @@ fpxhdx.icu
 fpxpobaudkjzu.site
 fpxuov.euroconference.it
 fpyf8.com
+fpyfowtmpihq.com
 fpyhhnyycugrd.website
 fpzpmx.com
 fpzuzubkxmwt.com
@@ -80816,6 +80879,7 @@ frfve33.fun
 frgf99.fun
 frgojcnjcphxjq.net
 frgre33.fun
+frhaelmqfuudc.website
 frhgnhgbnrlpspm.com
 frhlmz.bricozor.com
 frhopo.cn
@@ -80843,6 +80907,7 @@ frightfulvisitorimportant.com
 frillyearth.com
 frillyinspector.com
 fringedupspire.cfd
+frioencwksyur.website
 frionene.xyz
 frippettegmina.com
 friscobarchan.help
@@ -81423,6 +81488,7 @@ fvssmssxn.xyz
 fvtyvvrrzpmep.website
 fvuitt.alibabuy.com
 fvuwdaaimjtgv.space
+fvvpekpy.com
 fvvyjd.jtv.com
 fvvyndmujhviq.store
 fvwirerewj.com
@@ -81891,6 +81957,7 @@ gai1359.xyz
 gaia.adage.com/assets/js/min/BlockDetector.js
 gaiaonline.com/internal/mkt_t.php?
 gaietyunhappy.com
+gaifichauy.com
 gaijin.net/tag?
 gaimoupy.net
 gainifyads.com
@@ -82727,6 +82794,7 @@ genieedmp.com
 genieessp.com
 genieessp.jp
 genieesspv.jp
+genioduff.shop
 genipwitloof.com
 genishury.pro
 geniusdexchange.com
@@ -82862,6 +82930,7 @@ geovisite.ovh
 geoysu.blingshop.co.kr
 geozo.com
 gepheeleexauz.net
+gepiposiaijlm.online
 gepni.maxandlily.com
 gepounlazied.rest
 geqetreadyf.com
@@ -83267,6 +83336,7 @@ gfmmo.steponefoods.com
 gfn1.ugap.fr
 gfnokk.natro.com
 gfnpfbalgsfgw.space
+gfohkacpiof.com
 gfoqmtwpoodsy.space
 gforanythingamgl.com
 gforat.grahambrown.com
@@ -83409,9 +83479,12 @@ ggo10130lq.com
 ggo10131lq.com
 ggo10140lq.com
 ggo10141lq.com
+ggo10150lq.com
+ggo10151lq.com
 ggpig.melodymaison.co.uk
 ggreatshow.com
 ggreatstuff.com
+ggrumillu.com
 ggs.myzaker.com
 ggsfq.com
 ggsfq.xyz
@@ -83448,6 +83521,7 @@ ghbtns.com/github-btn.html$third-party
 ghd.vsee.me
 ghdlry.greetz.nl
 ghdne.onceuponafarmorganics.com
+ghdvmofvjgnhr.store
 ghdwowvotygjw.website
 ghegaintp.com
 ghekcc.icu
@@ -83505,6 +83579,7 @@ ghwkuv.lagirl.co.kr
 ghwmbue.icu
 ghwqbii.icu
 ghyvgxemrszmx.site
+ghyzimfjilvbt.online
 ghzbut.fineart.no
 ghzrqiei.nakedcph.com
 ghzxqtvqjybuj.online
@@ -83619,6 +83694,7 @@ gillspaste.com
 gillsunkindstretched.com
 gillynn.com
 gilorly.leadpages.co
+giltdeuzan.help
 gilverkebab.click
 gim.co.il
 gimea.site
@@ -83735,6 +83811,7 @@ givevacation.com
 givfb.com
 giving-paint.com
 giving-weird.pro
+givingface.pro
 givingpokunt.shop
 givingsol.com
 givoiq.nichiigakkan-careerplus.jp
@@ -83783,6 +83860,7 @@ gjnbkrhrbzs.com
 gjndsa.amaro.com
 gjnqoutbxohdb.site
 gjotophfy.com
+gjoycucziewoy.site
 gjqlxuffmatsp.online
 gjrlcxthtkeab.site
 gjrrr.hotelcollection.com
@@ -83913,6 +83991,7 @@ glaurtas.com
 glauryrhenic.cfd
 glaushoaftee.net
 glautchoapes.net
+glaxauglaufy.net
 glazedugra.com
 glazenrattoon.com
 glazepoutpattern.com
@@ -83974,6 +84053,7 @@ glimpaid.net
 glimpsemankind.com
 glimr.io
 glimtors.net
+glingabsoufturd.net
 gliptoacaft.net
 gliraimsofu.net
 glisteningguide.com
@@ -85809,6 +85889,7 @@ gqact.fleurdumal.com
 gqalqi656.com
 gqbkxohbonzxt.online
 gqbojqhbcsobbq.com
+gqbpkzehdkjur.site
 gqbwscobngkeg.website
 gqbzbszzbqsdi.online
 gqbzm.southernbakedpie.com
@@ -90634,6 +90715,7 @@ hcuvb.ordolife.com
 hcxjxdmopkbft.space
 hcyduikplovlg.space
 hcyrwitdvlznv.store
+hcytmigfgeshu.store
 hczbwlxihsjoc.website
 hcznaubp.icu
 hczvwi.soldejaneiro.com
@@ -91580,6 +91662,7 @@ hiiona.com
 hijab.decentattire.com
 hijxfm.gaspedaal.nl
 hikari.jiocinema.com
+hikcalhmoo.com
 hikedwarfgipsy.com
 hikihbsmbitq.com
 hikingbars.com
@@ -92361,6 +92444,7 @@ hopefulbiologicaloverreact.com
 hopefullyapricot.com
 hopefulrow.com
 hopelessrolling.com
+hopeungear.com
 hopghpfa.com
 hopgp.com
 hophoorgoo.net
@@ -92849,6 +92933,7 @@ hrjctx.xyz
 hrjdmo.rosettastone.co.uk
 hrjg.com.cn
 hrkjgepefndrh.site
+hrknqbbxmyvyo.site
 hrkrchivgjase.online
 hrm.healthgrades.com
 hrmdw8da.net
@@ -93111,6 +93196,7 @@ hueads.com
 hueadsxml.com
 huechl.paige.com
 huehue.fresha.com
+huemulsoled.help
 huffermyna.cfd
 hufflequieter.cfd
 huffpost.com/embed/connatix/$subdocument
@@ -93908,6 +93994,7 @@ icaubf.casamundo.de
 icbdr.com/images/pixel.gif
 icbitpudnmcal.space
 icbkd.theluxurycloset.com
+iccvjzhpfolzj.space
 icdirect.com
 icdrdgeh.com
 ice-media.ru
@@ -94206,6 +94293,7 @@ ieogwnrsgnfsz.online
 iepfcy.farmandfleet.com
 ieqdrtjjukp.net
 iequiguknwrsk.store
+ieruuicdabgday.net
 ieryt111.fun
 iesandb.cfd
 iesbpm.novasol.dk
@@ -97423,6 +97511,7 @@ inkestyle.net
 inkfeedmausoleum.com
 inkhornhutuktu.rest
 inkingleran.com
+inklaotqejnmh.online
 inklinkor.com
 inkornesto.com
 inkosiarchsee.qpon
@@ -97506,6 +97595,7 @@ innyardmaysin.help
 innyweakela.co
 inocvsvmeopau.space
 inone517.com
+inopportunelargestrumble.com
 inoprosport.su
 inoreader.com/adv/$domain=inoreader.com
 inoussurdeen.net
@@ -98495,6 +98585,7 @@ iqiyipic.com/image/20*_100000$image
 iqizfdgzqigjo.website
 iqjijcxxohzcc.space
 iqjwrk.crocodile.co.jp
+iqkaecaulzcqm.website
 iqkrungrikhu.com
 iqlhlp.ab-in-den-urlaub.ch
 iqm.com
@@ -98605,6 +98696,7 @@ irnuo.cloud9adventures.com
 irnvn.hurrahelden.at
 iro.iperceptions.com
 iroaltidsou.net
+irokocharter.click
 ironbeast.io
 ironcladtrouble.com
 ironishshirpit.cyou
@@ -99123,6 +99215,7 @@ ivwbox.de
 ivwkkh.nexity.fr
 ivx.lacompagnie.com
 ivy.pconline.com.cn
+ivyayqdpwv.com
 ivykiosk.com
 ivynjtsidwnqh.online
 ivyojrzhlczzr.online
@@ -99310,6 +99403,7 @@ izlok.xyz
 izmiua.xyz
 izoga.xyz
 izonekala.com
+izooksujeng.net
 izooto.com
 izopsg.icu
 izqeyo.xyz
@@ -99541,6 +99635,7 @@ jav777.cc/wp-content/themes/baskerville/js/jquery-ui
 java8.xyz
 javabsence11.fun
 javacid.fun
+javascriptbasics
 javascriptcdnlive.com
 javascriptcounter.appspot.com
 javascriptsynergy.com
@@ -99707,6 +99802,7 @@ jc001.cn/indexnew/js/yuyue.js
 jc1.dayfund.com.cn
 jc917x3.adaptive.marketing
 jca.claimlane.com
+jcajuesjvxlqy.store
 jcaqvl.twinset.com
 jcavguudmzlif.site
 jcbj62b2t.com
@@ -100067,6 +100163,7 @@ jgjyxf.xyz
 jgkbbvqvqlma.top
 jgkpsxlnqnknp.site
 jglgjz.xyz
+jglwyxywvsstl.website
 jgmywh.icu
 jgntjtyf.icu
 jgoabbmlmkbab.top
@@ -100137,6 +100234,7 @@ jhtvtevkod.com
 jhu8u9.pro
 jhuucwpvtlgzz.store
 jhuwxujtkgok.com
+jhuzffeiiargq.space
 jhwdpdnwej.net
 jhwmqsxpxhjlg.online
 jhwwtm.idmarket.com
@@ -100390,6 +100488,7 @@ jktkhn.top
 jktrnmllgenlb.online
 jkvbegvzzmrsn.website
 jkwdsl.videt.ro
+jkwybt9hc.com
 jkyawbmrllab.top
 jkyawbmrllzy.top
 jkzakzazloavb.top
@@ -100546,6 +100645,7 @@ joblessdrum.com
 jobmist.com
 jobmkewkzwbkq.top
 jobmkewkzwjez.top
+jobmkewkzwjjy.top
 jobs.bvng.nl
 jobs.ch/api/v1/public/product/track/
 jobs.sciencecareers.org
@@ -100837,6 +100937,7 @@ jpg.church/quicknoisilyheadbites.js
 jpg1.oss-cn-beijing.aliyuncs.com
 jpgfychjclfxh.site
 jpgln.eshopygoexpress.it
+jpgpnobrgquzb.site
 jpgqdnsmim.net
 jpgqfl.thezaol.com
 jpgtrk.com
@@ -101119,6 +101220,7 @@ jsahu.shoesforall.com
 jsawxlbwqxnsh.website
 jsb.qianzhan.com
 jsbmf.heymistr.com
+jsbqqciasxwzu.site
 jsc.adskeeper.co.uk/*.js$script,redirect=noop.js,domain=hhkungfu.tv
 jsc.marketgid.com/*.js?t=$redirect=noop.txt,important,~websocket,image,media,subdocument,stylesheet,script,xmlhttprequest,other
 jsc.mgid.com
@@ -102540,6 +102642,7 @@ khidlcdjhlsfu.space
 khimxz.shoesforcrews.com
 khiurx.tigerdirect.com
 khjppo.nominalia.com
+khlpawomcqrr.com
 khmertimeskh.com/wp-content/uploads/2019/07/Khmer-Times-352x516.gif
 khmyte.mobstub.com
 khngk.elaveskincare.com
@@ -102927,6 +103030,7 @@ kkocqcugsa.net
 kkoomcefmtf.com
 kkpgv2.xunlei.com
 kkqbi.takeyausa.com
+kkqlcvwqbajec.website
 kksjoa.com
 kksjsa.top
 kksuce.hankoya.com
@@ -103143,6 +103247,7 @@ knmdcrgyufqzn.website
 knnfl.muddymats.com
 knobblyerikite.help
 knobby-weight.pro
+knobbyrefrigerator.pro
 knobwarriors.com
 knockedcherries.com
 knockjav09212026.shop
@@ -103638,6 +103743,7 @@ kteawsjm.com
 ktfmk4utug.com
 ktgth.sokolovelaw.com
 ktgzmn.lcdwandhalter.de
+kthiuqnug.com
 kthivdrtzvcab.online
 kthjuw.lyst.com.au
 kthukxjctweql.site
@@ -105540,6 +105646,7 @@ lfhdryz.xyz
 lfhoyk.daydreamer.co.kr
 lfhthokieryf.com
 lfikfvpso.com
+lfjikymmt.net
 lfjslil.top
 lfkesv.seeplaces.com
 lfkheedokhld.com
@@ -105586,6 +105693,7 @@ lgforbes.akamaized.net
 lgforbes.akamaized.net/rtblog.php?
 lggbvkoaabvz.top
 lghgxaudrourv.com
+lghjjjwnxrpjq.space
 lghsf.draperjames.com
 lghsws.europcar.com.au
 lgidskil.top
@@ -105665,6 +105773,7 @@ lhpkpjdhpifie.website
 lhpuvnqyecvkd.icu
 lhqhv.kitted.shop
 lhqmmqmbqtezs.space
+lhqzzfdpqemuq.space
 lhranp.icu
 lhrtt.everlane.com
 lhrwhf.evolvevacationrental.com
@@ -105677,6 +105786,7 @@ lhtzfn.xyz
 lhuvxiezozkjg.online
 lhuwawhcxtltx.space
 lhvduqlahiakt.site
+lhvlkgbkjmrnc.com
 lhwimdpdjajfx.rocks
 lhwmjrll.net
 lhxmrcyaqsvze.site
@@ -105942,6 +106052,7 @@ limpet.eddiehinkle.com
 limpet.pioneerlandscapingllc.com
 limpet.yago.dev
 limping-gather.com
+limping-reputation.pro
 limpingpick.com
 limpyptomain.qpon
 limzizffmrkkc.online
@@ -111636,6 +111747,7 @@ louisehunchbackpearl.com
 loulouly.net
 loululant.cfd
 loumax.resamatic.fr
+loumeglumawha.com
 loungedcabrie.com
 loungesdeseed.com
 loupefulgora.shop
@@ -112085,6 +112197,7 @@ lrgermany.wolterskluwer.com
 lrgqv.goellevet.com
 lrgtcnxdtzazf.website
 lrhffbdwkplxf.website
+lrhtnrwv.com
 lrhungary.wolterskluwer.com
 lrhyty.meteovista.be
 lrhyty.weeronline.nl
@@ -112506,6 +112619,7 @@ lvbbdxvfisdnw.website
 lvbdml.avantajosul.ro
 lvbeybbrwlamk.top
 lvbeybbrwlmkm.top
+lvbeybbrwlzzv.top
 lvbeybbrwvywq.top
 lvbvr.aroma360.ch
 lvcnmtl.top
@@ -112789,6 +112903,7 @@ lzoqokmewrbkj.top
 lzoqokmewrqzq.top
 lzov.cn
 lzp.plus
+lzpiozkcngklw.site
 lzqmjakwllwry.top
 lzrhay.farmaciasoccavo.it
 lzrikate.com
@@ -113663,6 +113778,7 @@ mangatensei.com/runative.php
 mangbaiz.xyz
 mangensaud.net
 mangerolympicssnort.com
+mangeskapa.rest
 mango-office.ru/calltracking/
 mango-office.ru/track/
 mango.craigsguide.org
@@ -115980,6 +116096,7 @@ matureworld.ws/images/banners/
 maturityrigourwits.com
 matwbp.iask.sina.com.cn
 matytt.tone.ne.jp
+matzothdiane.com
 mauemfsbbis.com
 mauholeroufouwy.net
 maui.shakaguide.com
@@ -116339,6 +116456,7 @@ mdoshbx.top
 mdpgd.oasis-land.com
 mdqikg.xyz
 mdrihnok.com
+mdruxuqpjtjej.net
 mdrwjsijuqvtn.rocks
 mds.nipa.co.th
 mds.pliing.com/scm/videoburner/isobar/burneruploads/*.mp4$domain=tv3sport.dk,redirect=noop.txt,important,image,media,subdocument,stylesheet,script,xmlhttprequest,other
@@ -116493,6 +116611,7 @@ mdwzdvbjkixim.site
 mdxhon.allhomes.com.au
 mdxjgygc.com
 mdxprod.io/analytics.js
+mdyqnpmbc.com
 mdznads.com
 mdznads.pages.dev
 mdzwjra.cn
@@ -119531,6 +119650,7 @@ meultomhbkptq.store
 mevarabon.com
 mevedyru.com
 mevents.trusteer.com
+mevodvqmjix.com
 mewe.com/ubk4jrxn.js
 mewgzllnsp.com
 mewiththeb.com
@@ -119584,6 +119704,7 @@ mfrwyailfrrxm.website
 mfunss.yopagomenos.co
 mfuotcojjowsa.website
 mfvoa.etrgovinca.hu
+mfwbsveljxjsq.space
 mfxlpkvsqsgpq.online
 mfxtlm.mobiup.ro
 mfyavsmiha.com
@@ -119724,6 +119845,7 @@ mhwbhn.tohapi.fr
 mhwy6.icu
 mhxk.com
 mhyacjinulgvu.store
+mhydndfvgzvwu.site
 mhyxciahfas.com
 mhz-design.actonservice.com
 mi-de-ner-nis3.info
@@ -120263,6 +120385,7 @@ mkamtrak.rest
 mkaragqzeov.com
 mkcljppfkthiw.site
 mkcms.com/stats.js
+mkcmuoujzgsxv.online
 mkd88.cc/16.32.jpg
 mkdhb.ramybrook.com
 mkejunomqar.com
@@ -121298,6 +121421,7 @@ moqap.goodevas.ca
 moqdy.icu
 moradu.com/apu.php?
 moradu.com/apu.php?$redirect=noop.txt,important,image,media,subdocument,stylesheet,script,xmlhttprequest,other
+morallyfitful.com
 moratame.tw/img/contents/banner
 moraurban.help
 mordeegroo.net
@@ -121606,6 +121730,7 @@ mpbrz.com
 mpbsunbusk.com
 mpc-co.actonservice.com
 mpc.nicequest.com
+mpdsdrjdbrl.com
 mpejus.suvie.com
 mpeowvqnbeoah.online
 mpfgnmfw.com
@@ -121882,6 +122007,7 @@ msecure108.com
 mseeru.faz.net
 msehm.com
 msehuipsxmudk.store
+msffwvyhsapxgw.net
 msfvwi.sieuthiyte.com.vn
 msg-intl.qy.net
 msg-na.hismarttv.com
@@ -122065,6 +122191,7 @@ mtimiyx.top
 mtizl.ugg.com
 mtjmg.blade-city.com
 mtkgyrzfygdh.com
+mtklngjjpzpwq.space
 mtkrf.wrangler.com
 mtkure.gazin.com.br
 mtleu.mechewellness.com
@@ -123743,6 +123870,7 @@ natsp.xing.com
 nattepush.com
 nattersragis.cyou
 nattocktumbles.cyou
+naturalbrain.pro
 naturallon.com
 naturalnews.com/Javascripts/Jean-Jul.js
 naturalnews.com/wp-content/themes/naturalnews-child/$script
@@ -124058,6 +124186,7 @@ necessaryseat.com
 necesseloots.digital
 necesseunsoft.com
 necjqkadyfwgf.store
+neckcaterer.com
 neckedhilting.com
 necsii.ivet.pl
 nectriashp.rest
@@ -124422,6 +124551,7 @@ neurinhajib.rest
 neuroepithelium.lol
 neuronparolee.digital
 neurotrack.neurolake.io
+neutralmarlservices.com
 neutriamaligns.qpon
 nevbbl.com
 never2never.com
@@ -124871,6 +125001,7 @@ ngaddjpus.com
 ngads.com
 ngadverts.com
 ngaffn.itokin.net
+ngahkaqwrcemx.store
 ngan-hang-he-thong.com
 ngandong.com
 nganhang-shinhanvietnam.com
@@ -124896,9 +125027,11 @@ ngayhoilienquan.vn
 ngaytetlienquan.com
 ngazee.novostroy-m.ru
 ngbbrrenkxfyxfe.com
+ngbixvopoqccq.website
 ngbn.net
 ngc1.nsm-corp.com
 ngcbjq.frecuento.com
+ngccdcrdgskjpl.com
 ngcdc.charleskeith.eu
 ngcghsdvjfcpp.club
 ngecjfsawnr.com
@@ -126167,6 +126300,7 @@ nrils.michaelkors.com
 nripxo.motoblok.biz
 nrise.thatcertaingift.com
 nrjcur.pomelofashion.com
+nrjxrennaxcftuq.com
 nrk.no
 nrki.cn
 nrl.com
@@ -126445,6 +126579,7 @@ nudgeduck.com
 nudgesplityowza.com
 nudgmwrgudjvf.store
 nudiebutin.click
+nudipedcierzo.shop
 nudipedfavelas.cyou
 nudipedmahouts.cyou
 nudistrefuged.help
@@ -127008,6 +127143,7 @@ oaevvwccwrysd.site
 oafishchance.com
 oafishobservation.com
 oaglcwdhjcopy.website
+oagooazlqgcpg.site
 oagreess.net
 oahu.shakaguide.com
 oahvmrbvqsuey.online
@@ -127253,6 +127389,7 @@ oceanicinfold.world
 oceanmedia.co.il
 oceansaver.in/ajax/ad/$popup
 oceansaver.in/ajax/ad/$popup
+oceansknark.rest
 oceanwebcraft.com
 ocelot.anthroquiches.fr
 ocelot.goinpaces.com
@@ -127452,6 +127589,7 @@ oemeomlbkba.com
 oempafnyfiexpe.com
 oemutbhpmcvfpnv.com
 oenhpacsdtt.xyz
+oeoawmxr.com
 oeoyerdysxsrc.space
 oepahvkqvihnh.space
 oerfucoids.qpon
@@ -127717,6 +127855,7 @@ ogpzj.tumi.com
 ogqbkcfyvycna.space
 ogqhalasvjh.com
 ogqmnxvsimiol.online
+ogqomlnaloth.com
 ogrepsougie.net
 ogrid.org
 ogrootoaloamept.net
@@ -127946,6 +128085,7 @@ ok.ru/dk?cmd=videoStatNew
 ok.ru/dk?st.cmd$third-party
 ok.transhero.com
 ok.usa-perks.org
+ok3o5s3xi.com
 ok5.fun
 ok5xe6r7o.top
 ok8867s.com
@@ -130383,6 +130523,7 @@ ows.ihs.com
 owslnuzidiugg.store
 owsrgljb.icu
 owss.ihs.com
+owssalylvzcox.site
 owtanza.xyz
 owtjzn.so-nice.com.tw
 owtpooquoezgt.space
@@ -130536,6 +130677,7 @@ ozelmedikal.com
 ozetsaivoul.net
 ozgskikgahzqk.com
 ozhmig.cn
+ozihlzpeabppp.online
 ozjga.top
 ozkkuy.fabianafilippi.com
 ozkqakffarri.com
@@ -132263,6 +132405,7 @@ pavanwramp.click
 pavenshakudo.click
 pavingtelesis.rest
 pavle.exclusive-offers-su.click
+pavlovwhippet.cyou
 pavoboxapp.com
 pavoshare.com
 pavoshare.com
@@ -132993,6 +133136,7 @@ perzonalization.com
 pesaea.autoesa.cz
 peshitofikery.click
 peskycrash.com
+peskypromotion.pro
 pespinoanljtiwh.com
 pessimistic-hurt.pro
 pessimisticextra.com
@@ -134896,6 +135040,7 @@ pmisfoohysory.website
 pmiskc.cn
 pmiswxkxztebq.xyz
 pmjlbe.dailydoseme.com
+pmjlllngnazvr.online
 pmkez.tech
 pmkrwpnmvrujc.online
 pmmxeavnflhkl.website
@@ -134985,6 +135130,7 @@ pnxhgjcqfafcsj.com
 pnxtnp.xyz
 pny.net.penny.de
 pnyeyuid.com
+pnyloddeh.com
 pnywmhqzvdtwz.site
 po.ponant.com
 po.st
@@ -135090,6 +135236,7 @@ pointygrandma.com
 poireabbot.cfd
 poised-fear.pro
 poised-layer.pro
+poisedbuilding.pro
 poisedfuel.com
 poisedpig.com
 poisegel.com
@@ -135773,6 +135920,7 @@ poutifaigaboal.com
 pouvideo.cc/player*/vast.js
 pouy99uo.com
 povfpushwn.com
+povhkfwkwglx.com
 povtbi.automovilesalhambra.es
 povtswuewziqa.space
 powe.asian-xxx-videos.com
@@ -135873,6 +136021,7 @@ pplkrh.xyz
 pplpiq.pricerunner.se
 ppluoli.xyz
 ppmakl.oscarcalcados.com.br
+ppmdretch.rest
 ppoi.org
 pponixtkecj.com
 ppoqidindvqxz.website
@@ -135935,6 +136084,7 @@ pqiicj.misterspex.se
 pqkpmqrzrrjrb.vip
 pqlcpm.kindoh.co.kr
 pqlmae.lamaisonduchocolat.co.jp
+pqlrfrtotmzpt.website
 pqlrthvyxubbf.site
 pqmdisqphvk.com
 pqmqvnxwijmol.space
@@ -136633,6 +136783,7 @@ producerplot.com
 producingtrunkblaze.com
 product.cel-fi.com
 product.cloud.travelport.com
+product.rightmove.co.uk/localhomepages.html$subdocument
 productcabman.click
 productdownload.pro
 producthub.info
@@ -137045,6 +137196,7 @@ prpops.com
 prprocess.com
 prprocess.com/goal.js.php
 prqitqorszgwq.site
+prqyacjecs.com
 prrbmzwmxbbhu.store
 prre.ru
 prscripts.com
@@ -137183,6 +137335,7 @@ psma03.com
 psmardr.com
 psmastersendgrid.branch.rocks
 psmhpuuotdeby.store
+psnsbliinngie.space
 psoabojaksou.net
 psoadraphife.com
 psoaftob.xyz
@@ -137404,6 +137557,7 @@ ptoaksauseegh.net
 ptoampauteeftie.net
 ptoamsitholrexo.net
 ptoftashulsee.com
+ptokzodgbvdcs.store
 ptomtoomoo.com
 ptomw.com
 ptongouh.net
@@ -137419,6 +137573,7 @@ ptopseempushoa.net
 ptoptaglyphi.com
 ptoriq.kristall-shop.ru
 ptoucmauzurd.com
+ptoucmeejoohy.com
 ptoufourtourish.net
 ptougeegnep.net
 ptouglaiksiky.net
@@ -138424,6 +138579,7 @@ qarant.az/banner.js$domain=banker.az
 qarewien.com
 qarlfj.pamono.fr
 qarvpoomwzvcb.site
+qasdszuhgnhtl.space
 qashbits.com
 qasms.mcafee.com
 qaspyhlpfmwj.com
@@ -138459,6 +138615,7 @@ qbgvwfujvmxce.store
 qbhoxxlmcquvw.website
 qbhzghb.xyz
 qbibsy.icu
+qbixxhbamudnt.space
 qbjit.circalasvegas.com
 qbkraweaoelez.top
 qbkraweaoelzv.top
@@ -138492,6 +138649,7 @@ qbtncwhruequc.site
 qbtpixewskbwfck.com
 qbtxlmvdniubas.com
 qbuec.elvtd.com
+qbuqxddcgzenn.site
 qbuzkdoatnpgs.com
 qbwebebwkekaz.top
 qbwebebwkeqar.top
@@ -138620,6 +138778,7 @@ qdumq.amethysthome.com
 qdurzzrmxptvr.online
 qduttornm.com
 qdvavs.trademax.se
+qdvdesuqdanwc.store
 qdvkgjfculfmr.site
 qdvmjnjld.xyz
 qdvniq.sotf.com
@@ -138662,6 +138821,7 @@ qelllwrite.com
 qelln.tyentusa.com
 qelqlunebz.com
 qeltbufuh.com
+qelvaykmkqblr.top
 qelvaykmkqbrj.top
 qemuanrmnkzlb.space
 qeogcdcjr000.fun
@@ -138674,6 +138834,7 @@ qerihinnied.world
 qerkbejkbqmwv.top
 qerkbejkbqojj.top
 qerkbejqwqawb.top
+qernnbahzjdjf.online
 qerpks.rollei.de
 qertewrt.com
 qerubbomxxfhw.com
@@ -139396,6 +139557,7 @@ qqjxklfhoosftj.com
 qqjybs.digidirect.com.au
 qqjzxgaqpvrdr.website
 qqk19.com/data/content
+qqkbagfoxsjkh.online
 qqkedfhbdpgos.space
 qqkkpos.com
 qqkyhkfakl.xyz
@@ -140032,6 +140194,7 @@ qvonje.cn
 qvpohycbqen.com
 qvqtga.barenecessities.com
 qvrjg.coach.com
+qvrqujqovtnm.net
 qvrykgyestfdv.online
 qvsfrk.stephane-christian.com
 qvsimvenounsx.online
@@ -140525,6 +140688,7 @@ raialyoum.com/images/adarabi.jpg
 raialyoum.com/images/adenglish.jpg
 raiasdarker.digital
 raibougrepe.com
+raidfrightbritain.com
 raidmedics.com
 raigleephi.net
 raihan.daibetahealth.top
@@ -141553,7 +141717,6 @@ redelytannish.rest
 redetaailshilet.com
 redetaailshiletteri.com
 redexchange.net
-redfast.com
 redfast.com/ping/
 redfastlabs.com
 redfin.com/rift?
@@ -142071,6 +142234,7 @@ remine.actonservice.com
 reminews.com
 remintrex.com
 remisedtabet.help
+remisesimmixt.qpon
 remissapricothomey.com
 remisstracesexplain.com
 remixslot.com
@@ -142400,6 +142564,7 @@ resionsfrester.com
 resistcorrectly.com
 resistpajamas.com
 resistsupplieslank.com
+resitdolent.shop
 resnubdreich.com
 resoakrecurse.top
 resolespenide.digital
@@ -142835,6 +143000,7 @@ reyden-x.com
 reydrj.kozaczek.pl
 reydrj.papilot.pl
 reymvmqqyabek.top
+reymvmqqyablv.top
 reyokesylvite.cfd
 reypelis.tv
 reyzol.jdsports.dk
@@ -143617,6 +143783,7 @@ rnnes.morice.shop
 rnnstu.rentbeforeowning.com
 rnodydenknowl.org
 rnotraff.com
+rnpbmhmjxwmgs.website
 rnpiysana.com
 rnpkxgfp.xyz
 rnpqa.famousdaves.com
@@ -143669,6 +143836,7 @@ roasted-job.pro
 roasteddrip.cfd
 roastedvolt.net
 roastoup.com
+roastrigidbitesize.com
 roastwearwritten.com
 robalolexic.shop
 robazi.xyz
@@ -143933,6 +144101,7 @@ rotateme.ru
 rotator.
 rotator.riedta.com
 rotator.tradetracker.net
+rotbnllkqenrw.store
 roterfaden.naehmaschinen.com
 rotf.lol
 rothermophony.com
@@ -144089,6 +144258,7 @@ rpts.org
 rptzikhuyzsgy.website
 rpugp.biotrust.com
 rpuhf.greenleaf-blends.com
+rpvhxowckitodm.net
 rpvqhicca.com
 rpwnse.bagborroworsteal.com
 rpxorephfxdvm.site
@@ -145062,6 +145232,7 @@ rtunitytostaracaree.com
 rtvision.actonservice.com
 rtvnuemzpscuq.com
 rtvutrecht-static.reviveservers.com
+rtwgvkozpvicu.website
 rtwvcb.kissmyketo.com
 rtxfeed.com
 rtxgywxcqhbm.com
@@ -145137,6 +145308,7 @@ rudr-events.joybird.com
 ruedux.com/code/script/
 ruedux.com/code/script/
 ruehg.dotcompliancegroup.com
+ruelyrhesus.qpon
 rueofxfsfdyol.site
 rufadses.net
 rufcdstpjdcrd.site
@@ -146593,6 +146765,7 @@ sabaidea.cloud
 sabavision.com
 sabbathschloss.shop
 sabbir.restylebd.com
+sabdljzmuakkt.space
 sabdsbbxtglckx.com
 saber.srvcs.tumblr.com
 sabercacana.help
@@ -146958,6 +147131,7 @@ salsacartel.com
 salseprudely.com
 salsifyua22.com
 saltaabamp.rest
+saltagruelly.cfd
 saltanthankies.help
 saltaryferally.qpon
 saltatoizars.qpon
@@ -147310,6 +147484,7 @@ sandwich3452.fun
 sandwichconscientiousroadside.com
 sandydestructioncoax.com
 sandyrecordingmeet.com
+sanestruggle.com
 sangarmuting.shop
 sangarrigbane.qpon
 sangashulloos.world
@@ -148030,6 +148205,7 @@ scooperprio.digital
 scoot.co.uk/ajax/log_
 scoot.co.uk/delivery.php
 scoot.co.uk/delivery.php
+scootawarebarber.com
 scooterreyoked.qpon
 scootloor.com
 scopatevoltes.shop
@@ -148082,6 +148258,7 @@ scout.bergfreunde.se
 scout.salesloft.com/r?tid=
 scout.us2.salesloft.com
 scoutanalytics.net
+scoutsdregs.com
 scovyautarky.digital
 scowpoppanasals.com
 scp.deltadentalwa.com
@@ -148181,6 +148358,7 @@ scrotalacylase.rest
 scrougeoutseek.help
 scrubswim.com
 scruffjalapa.qpon
+scruffy.top
 scrufsirloin.com
 scrugokl.com
 scrungepipier.click
@@ -148323,6 +148501,7 @@ sdfsad562.xyz
 sdfscftg.com
 sdfsdvc.com
 sdfsshop1.com
+sdftjepmiwcwq.space
 sdg.desihamster.pro
 sdg.fwtrck.com
 sdgbg.carcan.com
@@ -148556,6 +148735,7 @@ secohmfibered.digital
 second.secondpairs.com
 secondcallousnodding.com
 secondcommander.com
+secondhandcamp.pro
 secondhandfall.com
 secondjav128.fun
 secondofigurae.rest
@@ -149717,6 +149897,7 @@ sermonsbleeder.top
 serpentinelow.com
 serpentshampoo.com
 serraitabret.com
+sersabion.com
 sersh.com
 serumsugareffective.com
 serv-ac.com
@@ -153799,6 +153980,7 @@ shadow.wonderflyarena.com
 shadow.wonderflygames.com
 shadowjav182.fun
 shadowymonitor.pro
+shadowytourist.pro
 shadytourdisgusted.com
 shaenphiks.com
 shaffleprolia.top
@@ -154100,6 +154282,7 @@ sheathaponia.click
 sheba.dhakapharmachy.com
 shebarindict.com
 shebudriftaiter.net
+sheckoaxausty.com
 shedimlobbish.com
 shedmanwaferer.help
 shedranfd.com
@@ -155053,6 +155236,7 @@ sibilantsuccess.com
 siblinggut.com
 siblpnvryviqz.website
 sibnet.ru/counter.php?
+sibufxhdrqpkqfp.com
 sibulla.com
 sibxoc.wundercurves.de
 sibylstroper.qpon
@@ -155601,6 +155785,7 @@ sjhvtn.nareum.co.kr
 sjhzp.etrgovinca.hr
 sjimtyb.top
 sjirv.thelistingslab.com
+sjkigukddtknz.store
 sjluuom.icu
 sjmbua.matsui.co.jp
 sjmlmk.xyz
@@ -155686,6 +155871,7 @@ skdjppgwnfune.club
 skdkjhpqkqave.space
 skdlbjwu.com
 skdncksklsv.com
+skdtveilhzynd.store
 skeanbyth.click
 skechers.com/dL6GOSf9/init.js
 skeepers.io/data/collect
@@ -155860,6 +156046,7 @@ slaqandsan.xyz
 slashdot.org/ajax.pl?op=nel|
 slashdot.org/country.js
 slashdot.org/images/js.gif
+slashersnugly.cfd
 slashnext.actonservice.com
 slashstar.net
 slatecharm.co
@@ -155869,6 +156056,7 @@ slaunch.spectrumtherapeutics.com
 slavesubmarinebribery.com
 slavicfarth.qpon
 slavinboise.world
+slawhomager.com
 slayingbritska.shop
 slayingbugeyes.com
 slaysweater.com
@@ -160807,6 +160995,7 @@ socialsexnetwork.net
 socialspark.com
 socialtrack.co
 sociaplus.com
+sociesstorax.rest
 sociidipper.world
 sociomantic.com
 socital.com
@@ -161136,6 +161325,7 @@ sometrics.com
 sometrics.netapp.com
 somewhatsunduke.com
 somewhatwideslimy.com
+somlvbnkqlqr.net
 somn.costumesupercenter.com
 somn.hiltongrandvacations.com
 somn.sonypictures.com
@@ -161562,6 +161752,7 @@ sortie-shop.com
 sortlist.cloud/log
 sortsgroused.cyou
 sortstructure.com
+sortswoopmarrying.com
 sortuneven.com
 sorucall.com
 sorxyx.vi.nl
@@ -162332,6 +162523,7 @@ spreeuwpermian.digital
 spreewaldkarte.de/t.gif
 spresso.com/pim/public/events
 sprewcereous.com
+sprewlnipter.qpon
 spriercorrals.help
 sprig.com
 spring-tns.net
@@ -162367,6 +162559,7 @@ spscas.hitachi-solutions.co.jp
 spsinhlychinhhang.com
 spsiqdfdkjgqv.space
 spslz.musely.com
+spssopjnqtcwe.website
 spsxrycmyhurr.site
 spt.ahram.org.eg
 spt.performgroup.com
@@ -167614,6 +167807,7 @@ staiamesial.click
 staiderkidhood.help
 stailtoomt.net
 staindessadness.com
+staindumpexists.com
 stained-normal.pro
 stainedhost.pro
 staininhibitfaraway.com
@@ -172483,6 +172677,7 @@ statystyki.panelek.com
 staumpempoak.net
 staunchtownsegg.com
 staupsoaksy.net
+staussoocoaftoo.net
 stautsoarsoaw.net
 stawhoph.com
 stax.kr
@@ -174189,6 +174384,7 @@ sv3.notifysrv.com
 sv5nm.icu
 sv7momo.com
 svanazido.qpon
+svbakoarswdvw.site
 svc.dynamics.com/f/m/$third-party
 svc.dynamics.com/t/v/$third-party
 svc.dynamics.com/t/w$third-party
@@ -174247,6 +174443,7 @@ svtg.andreemilio.com
 svtmo.heidicarey.com
 svtrd.com
 svubt.sistaco.com
+svueoubgfj.com
 svvol.eastwood.com
 svwgsnjcx.com
 svwo.cn
@@ -177828,6 +178025,7 @@ teethundercoverhowever.com
 teetusee.xyz
 tefbawbee.top
 tefinauknceiwoul.org
+teggcraws.com
 tegleebs.com
 tegminacissing.world
 teho.visma.fi
@@ -179620,6 +179818,7 @@ tjlsvr.ec-current.com
 tjme.io
 tjmsqsemqyshc.website
 tjnffp.tilebar.com
+tjnkzeqjntmhj.website
 tjoomo.com
 tjpkgnwvighek.click
 tjpnd.petals-wellness.com
@@ -180039,6 +180238,7 @@ tmmp.io
 tmntft.com
 tmoclbf.icu
 tmohentai.com/nb/
+tmopcaxczgrgb.store
 tmozs.com
 tmp.argusplatform.com/js/wid.tracker.js
 tmpbr.getgifted.com
@@ -180256,6 +180456,7 @@ tobaccosturgeon.com
 tobaltoyon.com
 tobapplog.ctobsnssdk.com
 tobapplog.tobsnssdk.com
+tobewhilst.cfd
 tobipovsem.com
 toblog.ctobsnssdk.com
 toblog.tobsnssdk.com
@@ -180267,6 +180468,7 @@ tock.weg.plus
 tocometothepoin.com
 tocontraceptive.com
 tocr.cn
+tocswcbbwbnjn.space
 tod99shi.com
 todayapp.tv
 todayapplied.com
@@ -180877,6 +181079,7 @@ tpfjpdizmvpaz.store
 tpfrro.justlease.nl
 tpi-app.herokuapp.com
 tpivd.tea-direct.co.uk
+tpiwuerxwtuyz.online
 tpjgppdpgae.com
 tpjw.cn
 tpkv.cn
@@ -186600,6 +186803,7 @@ trmads.eu
 trmget.eu
 trmgsqnuizqku.space
 trmit.com
+trmn.cn
 trmobc.com
 trmwidget.eu
 trmzum.com
@@ -187312,6 +187516,7 @@ tuna.ajaymantri.com
 tuna.purplespider.com
 tuna55.asikcoyx1000.com
 tundrafolder.com
+tundrasetas.com
 tundunkokia.qpon
 tune-up.site
 tune.sckmediatv.com
@@ -187523,6 +187728,7 @@ tvpixel.com
 tvppa.actonservice.com
 tvpqnh.xyz
 tvprocessing.com
+tvqqnhkixwqny.space
 tvrqlfdtfxtsh.space
 tvsbb.representclo.com
 tvsji.adameve.com
@@ -187710,6 +187916,7 @@ txcclf.morebella.co.kr
 txckepgtobupdnb.com
 txclmomo.club
 txcslpvgwxeao.website
+txdrzgmuwoqqh.site
 txexkxnxiqf.com
 txfroe.decodoma.cz
 txfryh.terra.com.br
@@ -187931,6 +188138,7 @@ u2w95z.xyz
 u300.dailybulletin.com
 u33011.com
 u3o1uncq.xyz
+u3qrlykp2.com
 u408n6z4f.top
 u40pdqw.com
 u46.pnc.com
@@ -189096,6 +189304,7 @@ unlawfuldamage.com
 unlawfulstrategy.com
 unleanmyrrhs.shop
 unleash.livepix.gg
+unleashgrantpurple.com
 unleashmamry.digital
 unleaveunsweat.rest
 unlimbhutlet.cfd
@@ -189138,6 +189347,7 @@ unnjrucbnhyijmu.com
 unntvrpwfzluf.store
 unoblotto.net
 unoptedcoupe.top
+unpackelasticlens.com
 unpackjanuary.com
 unpacksminas.world
 unpanchamon.com
@@ -189483,6 +189693,7 @@ upqmpu.leasingtime.de
 upraiseangule.shop
 upravel.com
 upreinmurmi.shop
+uprightessay.pro
 uprightfondly.com
 uprightwinner.pro
 uprimp.com
@@ -189664,6 +189875,7 @@ urgentlyrightypast.com
 urgerrebasis.com
 urgigan.info
 urgxnorjluhwl.online
+urialnork.shop
 urialprespur.qpon
 urimnugocfr.com
 urinegracefulfloating.com
@@ -190462,6 +190674,7 @@ utve.cn
 utwwzqdx.xyz
 utxhoqodwacfh.store
 utxokv.emp.co.uk
+utxprocyzqdjq.online
 utysolomonaut.com
 uu09cjylmzsym.top
 uu1.3gu.com
@@ -191365,6 +191578,7 @@ vdacdn1.viettel.vn
 vdacdn2.viettel.vn
 vdangi.topshelfgolf.com
 vdanllxaejxef.store
+vdaplqlnnlapg.store
 vdbaa.com
 vdbank.com.vn
 vdbedxruxhcdm.website
@@ -191430,6 +191644,7 @@ ve.velocityclinical.com
 ve0ke.icu
 veaiyl.icu
 vealbkvvorrel.top
+vealbkvvorrmj.top
 vealyupstamp.cfd
 vealyvexful.digital
 vebed.tennibot.com
@@ -191760,6 +191975,7 @@ vfraiv.phlov.com
 vfreecams.com
 vfrykczqqimeu.site
 vfsb.cn
+vfsxmbvlbebew.online
 vftap.rocketbowlinggear.com
 vfthr.com
 vftjogliukqhfvm.com
@@ -192862,6 +193078,7 @@ vjmrjomelelmq.top
 vjngm.buildasign.com
 vjnzknmvnmyny.top
 vjojjdird.com
+vjqefkvhrjyor.store
 vjs.selecttopoff.com
 vjtbgysqkmngz.website
 vjtpmzsmcwfko.online
@@ -194420,6 +194637,7 @@ wai69.com/js/baidu/
 waiads.com
 waifometolie.net
 waifoozoujou.com
+waifzoism.help
 waigaumaphips.net
 wailakihipping.cyou
 wailakisegno.world
@@ -194931,6 +195149,7 @@ wddnff.bonprix.cz
 wdff.buzz/hengf.
 wdfire1.woodlanddirect.com
 wdfl.co
+wdhymnxhxpgsn.space
 wdibwgllvzies.love
 wdickee.top
 wdig.vo.llnwd.net
@@ -196084,6 +196303,7 @@ wguqjqreoxaa.com
 wgutvwmkwmphq.com
 wgvqa.club
 wgvyey.butor1.hu
+wgwcubhr.com
 wgxnxjujenmqp.space
 wgyapq.stormberg.com
 wgzaprexwmzki.site
@@ -196735,6 +196955,7 @@ wittyinternet.com
 wittypopcorn.com
 witvwyisjsklpov.com
 witwayabide.com
+wivesvacancycraft.com
 wiwlqc.xyz
 wix-engage-visitors-prod-16.firebaseio.com
 wix.com/*utm_campaign=$third-party
@@ -196777,6 +196998,7 @@ wjmgjvgjvmzyn.top
 wjmyfp.billetdavion.be
 wjoknteqd.com
 wjoqdw.sanko-fukushi.com
+wjqpyvulryxtg.site
 wjqtqnstdthrb.website
 wjrtsc.apt2b.com
 wjssvg.descentekorea.co.kr
@@ -197480,6 +197702,7 @@ wqzmed.cn
 wqzqoobqpubx.com
 wqzyxxrrep.com
 wr.yiyouliao.com
+wrangleclaspinteract.com
 wrapn.net
 wrapper.bracdn.online
 wrapper.lemde.fr
@@ -197551,6 +197774,7 @@ wrufer.com
 wrugwj.bakerross.de
 wrutvnce.top
 wrvueo.mollis.ru
+wrvxrwbqvnzdr.space
 wrwqxy.victoriaemerson.com
 wrwwcbbrol.com
 wry-boss.com
@@ -197846,6 +198070,7 @@ ww9.kohls.com
 ww9874.com/asset/playerInit.js
 wwads.cn
 wwaeljamkvbrr.top
+wwaeljamkvvyv.top
 wwaispipywjia.online
 wwaotbfk.com
 wwaqijow.com
@@ -199131,6 +199356,7 @@ wxqbopca-i.global
 wxqhhskaltnbw.site
 wxrgjdkxhegjn.online
 wxsicu.xyz
+wxsyspqxdddrb.com
 wxuorj.parfumswinkel.nl
 wxurshzniivhg.store
 wxuuwmrmqfyh.com
@@ -199387,6 +199613,7 @@ xaprio.net
 xapu7phoge.com
 xaqnbj.cn
 xaqprd.gardenbenches.com
+xarfxj.icu
 xarukaawenabr.site
 xarvilo.com
 xatnxlpyx.com
@@ -199412,6 +199639,7 @@ xbiicstjgsqpr.website
 xbiqu5.com/12345678.
 xbiquge99.cc/js/dj
 xbiqugela.com/js/basisc.
+xbiwdjdwn.com
 xbjav.com/asset/js/vast.js
 xbleox.merryat.com
 xbmady.daimaru-matsuzakaya.jp
@@ -199839,6 +200067,7 @@ xiumb8.com/js/lm_
 xiupynbp.life
 xiuska.top
 xivhuwmzobzo.com
+xivledoyfnbjx.space
 xivsgjxkgnskk.online
 xiwhhx.wolfandshepherd.com
 xiwrqallad.com
@@ -199939,6 +200168,7 @@ xldqrmpbpybsz.online
 xldxphtg.xyz
 xldyxnzo6.com
 xlebyndzkwxkn.space
+xleemek84.com
 xlgirls.com/banner/$third-party
 xlgirls.com/banner/$third-party
 xlgvlvbc.xyz
@@ -200766,6 +200996,7 @@ xms.lol
 xms.theoundemma.com
 xmskvgwt.salaam.com.au
 xmtkdmcx.net
+xmtmelmhgtcdi.site
 xmtrading.com
 xmvlep.toposoutdoor.com
 xmvqzd.icu
@@ -200909,6 +201140,7 @@ xpe3qcqz.xyz
 xpee.com/application//assets/scripts/sgunder.js
 xpeeps.com
 xpeivrvqckryo.store
+xpffdxzsaqfhs.website
 xpffkbpq.xyz
 xpfxmwnridqots.com
 xpgyxqexljdl.net
@@ -201085,6 +201317,7 @@ xsifzaieypxqr.global
 xsimui.humanic.net
 xsiorsgamrqgz.site
 xsjgqnzlbijnn.space
+xskmpyxchvanm.site
 xskttd5d.com
 xslmpq.ohou.se
 xsnolrwghvrhe.online
@@ -201098,6 +201331,7 @@ xsrzqh.vietnamplus.vn
 xssqagquifueb.space
 xssqtymrtyyci.store
 xsswcg.moglix.com
+xstat.gazeta.bo
 xstats.net
 xsti.cn
 xstt5.com/skin/v3/js/dibu.js
@@ -201742,6 +201976,7 @@ yatemy.cn
 yatr.ru
 yatytentioniau.org
 yaudience.com
+yaupaibcfqfvh.online
 yaupfemur.com
 yauponbotone.com
 yavli.com
@@ -202048,6 +202283,7 @@ ygecho.wenz.de
 ygerneablauts.qpon
 ygersioepxuxo.online
 ygfjmbqlzqcbi.com
+ygfqixub.com
 ygfzfsdckrkij.online
 yghalathio.com
 yghhhn.frishop.dk
@@ -202093,6 +202329,7 @@ yhgfsdad.top
 yhgpuxim.xyz
 yhgyog.elephantstock.com
 yhhuzt.gintarine.lt
+yhidnrforbqby.online
 yhigae.junyu-fuku.com
 yhigrmnzd.life
 yhimpnr.icu
@@ -202276,6 +202513,7 @@ yjtag.yahoo.co.jp
 yjtxfsij.com
 yjuglz.terradeco.com.pl
 yjustingexcelele.org
+yjwojvccdukua.site
 yjwxegq.icu
 yjxssk.apartments.com
 yjyc-ask.com/res/ads/
@@ -202783,6 +203021,7 @@ yqdnad.icu
 yqfbofrwqqukn.online
 yqftcpvaynfq.com
 yqg.jobui.com
+yqgyfmjmtnace.online
 yqigli.tourlane.de
 yqingge.com/wap.js
 yqjshgx.bar
@@ -203091,6 +203330,7 @@ ywfsjaoghplft.site
 ywfycv.baby-products.ru
 ywg.jobui.com
 ywhikg.surplex.com
+ywjvjschozjzq.online
 ywkiyt.candere.com
 ywlywcynr.com
 ywocjqrco.com
@@ -203631,6 +203871,7 @@ zebeaa.click
 zebestof.com
 zebjlmmqakkkj.top
 zebjlmmqqbbqq.top
+zeblaitjiznqv.space
 zeburrocrouke.rest
 zebza.jamcruise.com
 zecsriilqkdei.site
@@ -203724,6 +203965,7 @@ zesazy.mebiusseiyaku.co.jp
 zesep.com
 zesgky.belambra.fr
 zespd.kathykuohome.com
+zesrsywjvphmj.store
 zestycrime.com
 zestyhorizon.com
 zestyrover.com
@@ -204351,6 +204593,7 @@ zoominfo.actonservice.com
 zoominfo.com/osx7m0dx/init.js
 zoominfo.com/pixel/
 zoomino.com
+zoomit.ir/ads/
 zoopeebouwauluh.net
 zooplus.de/om/pxl/
 zooplus.io/static/js/tracking-min.js
@@ -204516,6 +204759,7 @@ zrzhsb.lascana.sk
 zrzxqjkroukgh.space
 zs.dhl.de
 zs.voyage-prive.com
+zsaiqrqhoqbdo.site
 zsasvs.hey.car
 zsbkuvtdjhvvj.space
 zscnz.sugarandheartclinic.com
@@ -204713,6 +204957,7 @@ zvzjvx.shophorne.com
 zvzmzrawlvlez.top
 zvzmzrawlvryj.top
 zvzmzrawlvwlo.top
+zvzpzkqquxasw.store
 zwaar.net
 zwaar.org
 zwatgf.megaknihy.cz
@@ -204853,6 +205098,7 @@ zzmah.ranchjacksonhole.com
 zzohucf.icu
 zzpmu.writualplanner.com
 zzqolojveomrb.top
+zzqolojveozyo.top
 zzqyniagpyt.com
 zzqyxd.smartpozyczka.pl
 zzrazrorjaooq.top
